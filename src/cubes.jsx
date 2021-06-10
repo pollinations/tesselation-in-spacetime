@@ -48,7 +48,7 @@ const useCelularAutomata = ({size=[10,10,10]}) => {
         const ca = new CellularAutomata(size); 
         ca.setOutOfBoundValue(0);
         ca.fillWithDistribution([[0, 95], [1, 5]]);
-        ca.setRule('23/1');
+        ca.setRule('23/3');
         return {
             iterate(n=1) {
                 ca.iterate(n);

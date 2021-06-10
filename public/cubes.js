@@ -5,20 +5,20 @@
   var __getOwnPropNames = Object.getOwnPropertyNames;
   var __getProtoOf = Object.getPrototypeOf;
   var __hasOwnProp = Object.prototype.hasOwnProperty;
-  var __markAsModule = (target) => __defProp(target, "__esModule", {value: true});
+  var __markAsModule = (target) => __defProp(target, "__esModule", { value: true });
   var __commonJS = (cb, mod) => function __require() {
-    return mod || (0, cb[Object.keys(cb)[0]])((mod = {exports: {}}).exports, mod), mod.exports;
+    return mod || (0, cb[Object.keys(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
   };
   var __reExport = (target, module, desc) => {
     if (module && typeof module === "object" || typeof module === "function") {
       for (let key of __getOwnPropNames(module))
         if (!__hasOwnProp.call(target, key) && key !== "default")
-          __defProp(target, key, {get: () => module[key], enumerable: !(desc = __getOwnPropDesc(module, key)) || desc.enumerable});
+          __defProp(target, key, { get: () => module[key], enumerable: !(desc = __getOwnPropDesc(module, key)) || desc.enumerable });
     }
     return target;
   };
   var __toModule = (module) => {
-    return __reExport(__markAsModule(__defProp(module != null ? __create(__getProtoOf(module)) : {}, "default", module && module.__esModule && "default" in module ? {get: () => module.default, enumerable: true} : {value: module, enumerable: true})), module);
+    return __reExport(__markAsModule(__defProp(module != null ? __create(__getProtoOf(module)) : {}, "default", module && module.__esModule && "default" in module ? { get: () => module.default, enumerable: true } : { value: module, enumerable: true })), module);
   };
 
   // node_modules/object-assign/index.js
@@ -8474,7 +8474,7 @@
               }
               if (type === "script") {
                 var div = ownerDocument.createElement("div");
-                div.innerHTML = "<script></script>";
+                div.innerHTML = "<script><\/script>";
                 var firstChild = div.firstChild;
                 domElement = div.removeChild(firstChild);
               } else if (typeof props.is === "string") {
@@ -21608,7 +21608,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   var range = (n) => [...Array(n).keys()];
   var screenPX = (i) => i * 50;
   var map3D = (size, func) => range(size[0]).map((x) => range(size[1]).map((y) => range(size[2]).map((z) => func(x, y, z))));
-  var Cube = ({pos}) => {
+  var Cube = ({ pos }) => {
     const [x, y, z] = pos;
     return /* @__PURE__ */ import_react2.default.createElement("div", {
       className: "cube",
@@ -21620,27 +21620,27 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       }
     }, /* @__PURE__ */ import_react2.default.createElement("div", {
       className: "face face-1",
-      style: {backgroundColor: "rgb(238, 170, 34)"}
+      style: { backgroundColor: "rgb(238, 170, 34)" }
     }), /* @__PURE__ */ import_react2.default.createElement("div", {
       className: "face face-2",
-      style: {backgroundColor: "rgb(251, 186, 34)"}
+      style: { backgroundColor: "rgb(251, 186, 34)" }
     }), /* @__PURE__ */ import_react2.default.createElement("div", {
       className: "face face-3",
-      style: {backgroundColor: "rgb(255, 170, 51)"}
+      style: { backgroundColor: "rgb(255, 170, 51)" }
     }), /* @__PURE__ */ import_react2.default.createElement("div", {
       className: "face face-4",
-      style: {backgroundColor: "rgb(239, 170, 46)"}
+      style: { backgroundColor: "rgb(239, 170, 46)" }
     }), /* @__PURE__ */ import_react2.default.createElement("div", {
       className: "face face-5",
-      style: {backgroundColor: "rgb(255, 187, 34)"}
+      style: { backgroundColor: "rgb(255, 187, 34)" }
     }), /* @__PURE__ */ import_react2.default.createElement("div", {
       className: "face face-6",
-      style: {backgroundColor: "rgb(255, 163, 50)"}
+      style: { backgroundColor: "rgb(255, 163, 50)" }
     }));
   };
   var Cubes = () => {
     const size = [10, 10, 10];
-    const {state, iterate} = useCelularAutomata({size});
+    const { state, iterate } = useCelularAutomata({ size });
     useInterval_default(iterate, 1e3);
     if (!state)
       return null;
@@ -21649,13 +21649,13 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       pos: [x, y, z - 5]
     }) : null));
   };
-  var useCelularAutomata = ({size = [10, 10, 10]}) => {
+  var useCelularAutomata = ({ size = [10, 10, 10] }) => {
     const [state, setState] = (0, import_react2.useState)(null);
     return (0, import_react2.useMemo)(() => {
       const ca = new import_cellular_automata.default(size);
       ca.setOutOfBoundValue(0);
       ca.fillWithDistribution([[0, 95], [1, 5]]);
-      ca.setRule("23/1");
+      ca.setRule("23/3");
       return {
         iterate(n = 1) {
           ca.iterate(n);

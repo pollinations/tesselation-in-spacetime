@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "esbuild --bundle src/cubes.jsx --outfile=public/cubes.js",
-    "start": "esbuild --bundle src/cubes.jsx --outfile=public/cubes.js --watch",
+    "start": "esbuild --bundle src/cubes.jsx --outfile=public/cubes.js --watch"
   },
   "repository": {
     "type": "git",

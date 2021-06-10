@@ -2,8 +2,7 @@
 * {
   margin: 0 0;
   padding: 0 0;
-  font-size: 0;
-  font-family: 'Arial', sans-serif;
+  font-size: 16px;
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -13,8 +12,13 @@
 
 body {
   background-color: black;
+  font-family: "basier_circle_monoregular","Courier New","Courier",monospace;
+  color: rgb(222,222,222);
 }
 
+.legend {
+  padding: 4px 4px;
+}
 /** SHARED **/
 .spacer {
   height: 100%;
@@ -45,7 +49,6 @@ body {
   font-size: 8px;
   letter-spacing: 0.08em;
   margin-bottom: 5px;
-  color: #aaa;
 }
 
 #colorize {
