@@ -1,0 +1,25 @@
+
+/* cyberpunk */
+face-2 {
+  background-color: #4a22ff;
+  transform-origin: 0% 50%;
+  transform: rotateX(90deg) translate3d(0, 25px, 25px);
+}
+
+.face-3 {
+  background-color: #4a22ff;
+  transform: rotateX(90deg) translate3d(0, 25px, -25px);
+}
+
+.face-4 {
+  background-color: #22ff8d;
+  transform-origin: 50% 0%;
+  transform: rotateY(90deg) translate3d(-25px, 0px, -25px);
+}
+
+.face-5 {
+  background-color: #22b1ee;
+  transform-origin: 50% 0%;
+  transform: rotateY(90deg) translate3d(-25px, 0px, 25px);
+}
+

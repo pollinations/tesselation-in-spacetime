@@ -11,7 +11,7 @@
 }
 
 body {
-  background-color: black;
+  background-color: rgb(0, 0, 0);
   font-family: "basier_circle_monoregular","Courier New","Courier",monospace;
   color: rgb(222,222,222);
 }
@@ -70,7 +70,7 @@ body {
   display: inline-block;
   width: 20px;
   height: 20px;
-  background-color: #ffaa22;
+  background-color: #351549;
 }
 
 #perspective {
@@ -142,7 +142,7 @@ body {
   width: 50px;
   height: 50px;
   box-sizing: border-box;
-  border: 1px solid #ddd;
+  border: 0px solid #ddd;
   cursor: pointer;
 }
 
@@ -156,15 +156,15 @@ body {
   position: absolute;
   width: 50px;
   height: 50px;
-  background-color: #ffaa22;
+  background-color: #4a22ff;
   transform-origin: 50% 50%;
-  border: 1px solid rgba(0,0,0,0.1);
+  border: 0px solid rgba(0,0,0,0.1);
   opacity: 1;
   z-index: 2;
 }
 
 .face-1 {
-  background-color: #ffaa11;
+  background-color: #4d11ff;
   transform: translate3d(0, 0, 50px);
 }
 
@@ -173,24 +173,24 @@ body {
 }
 
 .face-2 {
-  background-color: #ffaa33;
+  background-color: #4a22ff;
   transform-origin: 0% 50%;
   transform: rotateX(90deg) translate3d(0, 25px, 25px);
 }
 
 .face-3 {
-  background-color: #ffbb22;
+  background-color: #4a22ff;
   transform: rotateX(90deg) translate3d(0, 25px, -25px);
 }
 
 .face-4 {
-  background-color: #ff9922;
+  background-color: #22ff8d;
   transform-origin: 50% 0%;
   transform: rotateY(90deg) translate3d(-25px, 0px, -25px);
 }
 
 .face-5 {
-  background-color: #eeaa22;
+  background-color: #22b1ee;
   transform-origin: 50% 0%;
   transform: rotateY(90deg) translate3d(-25px, 0px, 25px);
 }
