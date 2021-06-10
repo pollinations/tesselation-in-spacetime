@@ -23,9 +23,10 @@ const App = () => {
         setDesiredIteration(_ => desiredIteration);
         setTimeToNext(changeEvery - timeDifference % changeEvery);
         // console.log(desiredIteration);
-        if (iteration() < desiredIteration)
-            iterate();
-        else {
+        if (iteration() < desiredIteration) {
+            const stepSize = Math.ceil((desiredIteration - iteration())/10);
+            iterate(stepSize);
+        } else {
             setReachedIteration(_ => true);
         }
     }, 100)
@@ -39,7 +40,7 @@ const App = () => {
             <div id="plane-wrapper">
             <div className="spacer"></div>
             <div id="plane">
-                <Cubes {...{cell, reachedIteration, size}} />
+                <Cubes {...{cell, reachedIteration, size, timeToNext}} />
             </div>
         </div>
     </>);

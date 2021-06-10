@@ -15,8 +15,9 @@ export const useCelularAutomata = ({ size = [10, 10, 10] }) => {
 
     return {
         iterate(n = 1) {
+            console.log("iterating",n)
             ca.iterate(n);
-            setIterations(iterations => iterations+1);
+            setIterations(iterations => iterations+n);
             setState(ca);
         },
         cell(...pos) {

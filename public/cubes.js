@@ -21618,8 +21618,9 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     }, [size2]);
     return {
       iterate(n = 1) {
+        console.log("iterating", n);
         ca.iterate(n);
-        setIterations((iterations2) => iterations2 + 1);
+        setIterations((iterations2) => iterations2 + n);
         setState(ca);
       },
       cell(...pos) {
@@ -21667,13 +21668,17 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   };
 
   // src/Cubes2.jsx
-  var Cubes = ({ reachedIteration, cell, size: size2 }) => {
+  var Cubes = ({ reachedIteration, cell, size: size2, timeToNext }) => {
+    const disabled = !reachedIteration || flashWhenCloseToNext(timeToNext);
     return /* @__PURE__ */ import_react4.default.createElement(import_react4.default.Fragment, null, " ", map3D(size2, (x, y, z) => cell(x, y, z) ? /* @__PURE__ */ import_react4.default.createElement(Cube, {
-      disabled: !reachedIteration,
+      disabled,
       key: `${x}_${y}_${z}`,
       pos: [x, y, z - 5]
     }) : null));
   };
+  function flashWhenCloseToNext(timeToNext) {
+    return timeToNext < 5;
+  }
 
   // src/App.jsx
   var startTime = 1623359462896;
@@ -21689,9 +21694,10 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       const desiredIteration2 = Math.floor(timeDifference / changeEvery);
       setDesiredIteration((_) => desiredIteration2);
       setTimeToNext(changeEvery - timeDifference % changeEvery);
-      if (iteration() < desiredIteration2)
-        iterate();
-      else {
+      if (iteration() < desiredIteration2) {
+        const stepSize = Math.ceil((desiredIteration2 - iteration()) / 10);
+        iterate(stepSize);
+      } else {
         setReachedIteration((_) => true);
       }
     }, 100);
@@ -21708,7 +21714,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     }), /* @__PURE__ */ import_react5.default.createElement("div", {
       id: "plane"
     }, /* @__PURE__ */ import_react5.default.createElement(Cubes, {
-      ...{ cell, reachedIteration, size }
+      ...{ cell, reachedIteration, size, timeToNext }
     }))));
   };
   var container = document.getElementById("react_root");
