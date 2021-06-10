@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import CellularAutomata from "cellular-automata";
 
 export const useCelularAutomata = ({ size = [10, 10, 10] }) => {
-    const [state, setState] = useState(null);
+    const [_, setState] = useState(null);
     const [iterations, setIterations] = useState(0);
 
     const ca = useMemo(() => {

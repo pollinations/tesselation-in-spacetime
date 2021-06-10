@@ -1,4 +1,5 @@
 import React from "react";
+import { screenPX } from "./utils";
 
 
 export const Cube = ({ pos, disabled }) => {
@@ -16,4 +17,3 @@ export const Cube = ({ pos, disabled }) => {
 };
 
 
-const screenPX = i => i * 50;

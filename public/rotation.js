@@ -72,4 +72,6 @@ document.addEventListener('mouseup', endDrag)
 document.addEventListener('touchend',  endDrag)
 
 /** RUN **/
-applyRotations($plane, xRotation, yRotation, zRotation)
+setTimeout(() => {
+  applyRotations($plane, xRotation, yRotation, zRotation)
+})

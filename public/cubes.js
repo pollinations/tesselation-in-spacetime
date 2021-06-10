@@ -2440,11 +2440,11 @@
       if (true) {
         (function() {
           "use strict";
-          var React3 = require_react();
+          var React4 = require_react();
           var _assign = require_object_assign();
           var Scheduler = require_scheduler();
           var tracing = require_tracing();
-          var ReactSharedInternals = React3.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React4.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           function warn(format) {
             {
               for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
@@ -2476,7 +2476,7 @@
               Function.prototype.apply.call(console[level], console, argsWithFormat);
             }
           }
-          if (!React3) {
+          if (!React4) {
             {
               throw Error("ReactDOM was loaded before React. Make sure you load the React package before loading ReactDOM.");
             }
@@ -3692,7 +3692,7 @@
           var didWarnInvalidChild = false;
           function flattenChildren(children) {
             var content = "";
-            React3.Children.forEach(children, function(child) {
+            React4.Children.forEach(children, function(child) {
               if (child == null) {
                 return;
               }
@@ -3703,7 +3703,7 @@
           function validateProps(element, props) {
             {
               if (typeof props.children === "object" && props.children !== null) {
-                React3.Children.forEach(props.children, function(child) {
+                React4.Children.forEach(props.children, function(child) {
                   if (child == null) {
                     return;
                   }
@@ -10896,7 +10896,7 @@
           }
           var fakeInternalInstance = {};
           var isArray = Array.isArray;
-          var emptyRefsObject = new React3.Component().refs;
+          var emptyRefsObject = new React4.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -20938,15 +20938,15 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       module.exports = function moore(range2, dimensions) {
         range2 = range2 || 1;
         dimensions = dimensions || 2;
-        var size = range2 * 2 + 1;
-        var length = Math.pow(size, dimensions) - 1;
+        var size2 = range2 * 2 + 1;
+        var length = Math.pow(size2, dimensions) - 1;
         var neighbors = new Array(length);
         for (var i = 0; i < length; i++) {
           var neighbor = neighbors[i] = new Array(dimensions);
           var index = i < length / 2 ? i : i + 1;
           for (var dimension = 1; dimension <= dimensions; dimension++) {
-            var value = index % Math.pow(size, dimension);
-            neighbor[dimension - 1] = value / Math.pow(size, dimension - 1) - range2;
+            var value = index % Math.pow(size2, dimension);
+            neighbor[dimension - 1] = value / Math.pow(size2, dimension - 1) - range2;
             index -= value;
           }
         }
@@ -20962,12 +20962,12 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         "use strict";
         range2 = range2 || 1;
         dimensions = dimensions || 2;
-        var size = range2 * 2 + 1, iterations = Math.pow(size, dimensions), center = (iterations - 1) / 2, neighbors = [];
+        var size2 = range2 * 2 + 1, iterations = Math.pow(size2, dimensions), center = (iterations - 1) / 2, neighbors = [];
         for (var i = 0; i < iterations; i++) {
           if (i !== center) {
             var neighbor = new Array(dimensions), distance = 0, remaining = i;
             for (var d = 0; d < dimensions; d++) {
-              var remainder = remaining % Math.pow(size, d + 1), value = remainder / Math.pow(size, d) - range2;
+              var remainder = remaining % Math.pow(size2, d + 1), value = remainder / Math.pow(size2, d) - range2;
               neighbor[d] = value;
               distance += Math.abs(value);
               remaining -= remainder;
@@ -21577,8 +21577,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     }
   });
 
-  // src/cubes.jsx
-  var import_react4 = __toModule(require_react());
+  // src/App.jsx
+  var import_react5 = __toModule(require_react());
   var import_react_dom = __toModule(require_react_dom());
 
   // node_modules/react-use/esm/useInterval.js
@@ -21603,48 +21603,19 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   };
   var useInterval_default = useInterval;
 
-  // src/Cube.jsx
-  var import_react2 = __toModule(require_react());
-  var Cube = ({ pos, disabled }) => {
-    const [x, y, z] = pos;
-    return /* @__PURE__ */ import_react2.default.createElement("div", {
-      className: "cube " + (disabled ? "disabled" : ""),
-      "data-layer": "0",
-      style: {
-        transform: `translate3d(${screenPX(x)}px, ${screenPX(y)}px, ${screenPX(z)}px)`
-      }
-    }, /* @__PURE__ */ import_react2.default.createElement("div", {
-      className: "face face-1"
-    }), /* @__PURE__ */ import_react2.default.createElement("div", {
-      className: "face face-2"
-    }), /* @__PURE__ */ import_react2.default.createElement("div", {
-      className: "face face-3"
-    }), /* @__PURE__ */ import_react2.default.createElement("div", {
-      className: "face face-4"
-    }), /* @__PURE__ */ import_react2.default.createElement("div", {
-      className: "face face-5"
-    }), /* @__PURE__ */ import_react2.default.createElement("div", {
-      className: "face face-6"
-    }));
-  };
-  var screenPX = (i) => i * 50;
-
-  // src/utils.js
-  var map3D = (size, func) => range(size[0]).map((x) => range(size[1]).map((y) => range(size[2]).map((z) => func(x, y, z))));
-
   // src/useCelularAutomata.jsx
-  var import_react3 = __toModule(require_react());
+  var import_react2 = __toModule(require_react());
   var import_cellular_automata = __toModule(require_cellular_automata2());
-  var useCelularAutomata = ({ size = [10, 10, 10] }) => {
-    const [state, setState] = (0, import_react3.useState)(null);
-    const [iterations, setIterations] = (0, import_react3.useState)(0);
-    const ca = (0, import_react3.useMemo)(() => {
-      const ca2 = new import_cellular_automata.default(size);
+  var useCelularAutomata = ({ size: size2 = [10, 10, 10] }) => {
+    const [_, setState] = (0, import_react2.useState)(null);
+    const [iterations, setIterations] = (0, import_react2.useState)(0);
+    const ca = (0, import_react2.useMemo)(() => {
+      const ca2 = new import_cellular_automata.default(size2);
       ca2.setOutOfBoundValue(0);
       ca2.fillWithDistribution([[0, 95], [1, 5]]);
       ca2.setRule("23/3");
       return ca2;
-    }, [size]);
+    }, [size2]);
     return {
       iterate(n = 1) {
         ca.iterate(n);
@@ -21660,45 +21631,88 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     };
   };
 
-  // src/cubes.jsx
-  var startTime = 1623359462896;
-  var changeEvery = 30;
+  // src/Cubes.jsx
+  var import_react4 = __toModule(require_react());
+
+  // src/Cube.jsx
+  var import_react3 = __toModule(require_react());
+
+  // src/utils.js
+  var map3D = (size2, func) => range(size2[0]).map((x) => range(size2[1]).map((y) => range(size2[2]).map((z) => func(x, y, z))));
   var range = (n) => [...Array(n).keys()];
-  var Cubes = ({ reachedIteration, cell, size }) => {
-    return /* @__PURE__ */ import_react4.default.createElement(import_react4.default.Fragment, null, " ", map3D(size, (x, y, z) => cell(x, y, z) ? /* @__PURE__ */ import_react4.default.createElement(Cube, {
+  var screenPX = (i) => i * 50;
+
+  // src/Cube.jsx
+  var Cube = ({ pos, disabled }) => {
+    const [x, y, z] = pos;
+    return /* @__PURE__ */ import_react3.default.createElement("div", {
+      className: "cube " + (disabled ? "disabled" : ""),
+      "data-layer": "0",
+      style: {
+        transform: `translate3d(${screenPX(x)}px, ${screenPX(y)}px, ${screenPX(z)}px)`
+      }
+    }, /* @__PURE__ */ import_react3.default.createElement("div", {
+      className: "face face-1"
+    }), /* @__PURE__ */ import_react3.default.createElement("div", {
+      className: "face face-2"
+    }), /* @__PURE__ */ import_react3.default.createElement("div", {
+      className: "face face-3"
+    }), /* @__PURE__ */ import_react3.default.createElement("div", {
+      className: "face face-4"
+    }), /* @__PURE__ */ import_react3.default.createElement("div", {
+      className: "face face-5"
+    }), /* @__PURE__ */ import_react3.default.createElement("div", {
+      className: "face face-6"
+    }));
+  };
+
+  // src/Cubes.jsx
+  var Cubes = ({ reachedIteration, cell, size: size2 }) => {
+    return /* @__PURE__ */ import_react4.default.createElement(import_react4.default.Fragment, null, " ", map3D(size2, (x, y, z) => cell(x, y, z) ? /* @__PURE__ */ import_react4.default.createElement(Cube, {
       disabled: !reachedIteration,
       key: `${x}_${y}_${z}`,
       pos: [x, y, z - 5]
     }) : null));
   };
+
+  // src/App.jsx
+  var startTime = 1623359462896;
+  var changeEvery = 30;
+  var size = [10, 10, 10];
   var App = () => {
-    const [reachedIteration, setReachedIteration] = (0, import_react4.useState)(false);
-    const size = [10, 10, 10];
+    const [reachedIteration, setReachedIteration] = (0, import_react5.useState)(false);
+    const [timeToNext, setTimeToNext] = (0, import_react5.useState)(Infinity);
+    const [desiredIteration, setDesiredIteration] = (0, import_react5.useState)(0);
     const { cell, iterate, iteration } = useCelularAutomata({ size });
     useInterval_default(() => {
       const timeDifference = (new Date().getTime() - startTime) / 1e3;
-      const desiredIteration = Math.floor(timeDifference / changeEvery);
-      if (iteration() < desiredIteration)
+      const desiredIteration2 = Math.floor(timeDifference / changeEvery);
+      setDesiredIteration((_) => desiredIteration2);
+      setTimeToNext(changeEvery - timeDifference % changeEvery);
+      if (iteration() < desiredIteration2)
         iterate();
-      else
+      else {
         setReachedIteration((_) => true);
+      }
     }, 100);
-    return /* @__PURE__ */ import_react4.default.createElement(import_react4.default.Fragment, null, /* @__PURE__ */ import_react4.default.createElement("div", {
+    return /* @__PURE__ */ import_react5.default.createElement(import_react5.default.Fragment, null, /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "legend"
-    }, "Rule #23/3"), /* @__PURE__ */ import_react4.default.createElement("div", {
+    }, "Rule #23/3"), /* @__PURE__ */ import_react5.default.createElement("div", {
+      className: "right legend"
+    }, "Time to next iteration: ", Math.round(timeToNext * 10) / 10, " "), /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "legend"
-    }, "Iteration ", iteration(), " "), /* @__PURE__ */ import_react4.default.createElement("div", {
+    }, "Iteration ", iteration(), " / ", desiredIteration, " "), /* @__PURE__ */ import_react5.default.createElement("div", {
       id: "plane-wrapper"
-    }, /* @__PURE__ */ import_react4.default.createElement("div", {
+    }, /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "spacer"
-    }), /* @__PURE__ */ import_react4.default.createElement("div", {
+    }), /* @__PURE__ */ import_react5.default.createElement("div", {
       id: "plane"
-    }, /* @__PURE__ */ import_react4.default.createElement(Cubes, {
+    }, /* @__PURE__ */ import_react5.default.createElement(Cubes, {
       ...{ cell, reachedIteration, size }
     }))));
   };
   var container = document.getElementById("react_root");
-  import_react_dom.default.render(/* @__PURE__ */ import_react4.default.createElement(App, null), container);
+  import_react_dom.default.render(/* @__PURE__ */ import_react5.default.createElement(App, null), container);
 })();
 /*
 object-assign
