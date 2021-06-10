@@ -21728,7 +21728,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     }) : null));
   };
   function flashWhenCloseToNext(timeToNext) {
-    return timeToNext < 5;
+    return timeToNext < 1.5;
   }
 
   // src/App.jsx

@@ -10,6 +10,6 @@ export const Cubes = ({ reachedIteration, cell, size,timeToNext }) => {
     </>);
 };
 function flashWhenCloseToNext(timeToNext) {
-    return timeToNext < 5;
+    return timeToNext < 1.5;
 }
 
