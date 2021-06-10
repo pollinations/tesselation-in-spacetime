@@ -21619,23 +21619,17 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         transform: `translate3d(0px, 0px, ${screenPX(z)}px)`
       }
     }, /* @__PURE__ */ import_react2.default.createElement("div", {
-      className: "face face-1",
-      style: { backgroundColor: "rgb(238, 170, 34)" }
+      className: "face face-1"
     }), /* @__PURE__ */ import_react2.default.createElement("div", {
-      className: "face face-2",
-      style: { backgroundColor: "rgb(251, 186, 34)" }
+      className: "face face-2"
     }), /* @__PURE__ */ import_react2.default.createElement("div", {
-      className: "face face-3",
-      style: { backgroundColor: "rgb(255, 170, 51)" }
+      className: "face face-3"
     }), /* @__PURE__ */ import_react2.default.createElement("div", {
-      className: "face face-4",
-      style: { backgroundColor: "rgb(239, 170, 46)" }
+      className: "face face-4"
     }), /* @__PURE__ */ import_react2.default.createElement("div", {
-      className: "face face-5",
-      style: { backgroundColor: "rgb(255, 187, 34)" }
+      className: "face face-5"
     }), /* @__PURE__ */ import_react2.default.createElement("div", {
-      className: "face face-6",
-      style: { backgroundColor: "rgb(255, 163, 50)" }
+      className: "face face-6"
     }));
   };
   var Cubes = () => {
@@ -21649,6 +21643,15 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       pos: [x, y, z - 5]
     }) : null));
   };
+  var App = () => /* @__PURE__ */ import_react2.default.createElement(import_react2.default.Fragment, null, /* @__PURE__ */ import_react2.default.createElement("div", {
+    className: "legend"
+  }, "Rule #23/3 hhhh"), /* @__PURE__ */ import_react2.default.createElement("div", {
+    id: "plane-wrapper"
+  }, /* @__PURE__ */ import_react2.default.createElement("div", {
+    className: "spacer"
+  }), /* @__PURE__ */ import_react2.default.createElement("div", {
+    id: "plane"
+  }, /* @__PURE__ */ import_react2.default.createElement(Cubes, null))));
   var useCelularAutomata = ({ size = [10, 10, 10] }) => {
     const [state, setState] = (0, import_react2.useState)(null);
     return (0, import_react2.useMemo)(() => {
@@ -21665,8 +21668,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       };
     }, [size]);
   };
-  var container = document.getElementById("cubes");
-  import_react_dom.default.render(/* @__PURE__ */ import_react2.default.createElement(Cubes, null), container);
+  var container = document.getElementById("react_root");
+  import_react_dom.default.render(/* @__PURE__ */ import_react2.default.createElement(App, null), container);
 })();
 /*
 object-assign
