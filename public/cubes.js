@@ -21695,12 +21695,12 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       setDesiredIteration((_) => desiredIteration2);
       setTimeToNext(changeEvery - timeDifference % changeEvery);
       if (iteration() < desiredIteration2) {
-        const stepSize = Math.ceil((desiredIteration2 - iteration()) / 10);
+        const stepSize = Math.ceil((desiredIteration2 - iteration()) / 5);
         iterate(stepSize);
       } else {
         setReachedIteration((_) => true);
       }
-    }, 100);
+    }, 500);
     return /* @__PURE__ */ import_react5.default.createElement(import_react5.default.Fragment, null, /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "legend"
     }, "Rule #23/3"), /* @__PURE__ */ import_react5.default.createElement("div", {

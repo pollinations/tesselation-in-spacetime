@@ -24,12 +24,12 @@ const App = () => {
         setTimeToNext(changeEvery - timeDifference % changeEvery);
         // console.log(desiredIteration);
         if (iteration() < desiredIteration) {
-            const stepSize = Math.ceil((desiredIteration - iteration())/10);
+            const stepSize = Math.ceil((desiredIteration - iteration())/5);
             iterate(stepSize);
         } else {
             setReachedIteration(_ => true);
         }
-    }, 100)
+    }, 500)
 
 
     return (
