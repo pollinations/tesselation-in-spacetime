@@ -22,8 +22,8 @@ function calculateRotations(e) {
   var dragDiffX = dragEnd.x - dragStart.x
   var dragDiffY = dragEnd.y - dragStart.y
 
-  xRotation -= dragDiffY / 10
-  zRotation -= dragDiffX / 10
+  xRotation -= dragDiffY / 30
+  zRotation -= dragDiffX / 30
 
   if (xRotation < 0) xRotation = 0
   if (xRotation > 90) xRotation = 89
