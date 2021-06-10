@@ -21631,7 +21631,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     };
   };
 
-  // src/Cubes.jsx
+  // src/Cubes2.jsx
   var import_react4 = __toModule(require_react());
 
   // src/Cube.jsx
@@ -21666,7 +21666,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     }));
   };
 
-  // src/Cubes.jsx
+  // src/Cubes2.jsx
   var Cubes = ({ reachedIteration, cell, size: size2 }) => {
     return /* @__PURE__ */ import_react4.default.createElement(import_react4.default.Fragment, null, " ", map3D(size2, (x, y, z) => cell(x, y, z) ? /* @__PURE__ */ import_react4.default.createElement(Cube, {
       disabled: !reachedIteration,

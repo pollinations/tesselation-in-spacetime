@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 
 import { useInterval } from "react-use";
 import { useCelularAutomata } from "./useCelularAutomata";
-import { Cubes } from "./Cubes";
+import { Cubes } from "./Cubes2";
 
 const startTime = 1623359462896;
 const changeEvery = 30; // in seconds
