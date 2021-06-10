@@ -1044,7 +1044,7 @@
             }
             return dispatcher.useContext(Context, unstable_observedBits);
           }
-          function useState3(initialState) {
+          function useState4(initialState) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useState(initialState);
           }
@@ -1056,7 +1056,7 @@
             var dispatcher = resolveDispatcher();
             return dispatcher.useRef(initialValue);
           }
-          function useEffect2(create, deps) {
+          function useEffect3(create, deps) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useEffect(create, deps);
           }
@@ -1626,13 +1626,13 @@
           exports.useCallback = useCallback;
           exports.useContext = useContext;
           exports.useDebugValue = useDebugValue;
-          exports.useEffect = useEffect2;
+          exports.useEffect = useEffect3;
           exports.useImperativeHandle = useImperativeHandle;
           exports.useLayoutEffect = useLayoutEffect;
           exports.useMemo = useMemo2;
           exports.useReducer = useReducer2;
           exports.useRef = useRef2;
-          exports.useState = useState3;
+          exports.useState = useState4;
           exports.version = ReactVersion;
         })();
       }
@@ -21578,8 +21578,29 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   });
 
   // src/App.jsx
-  var import_react5 = __toModule(require_react());
+  var import_react6 = __toModule(require_react());
   var import_react_dom = __toModule(require_react_dom());
+
+  // node_modules/react-use/esm/misc/util.js
+  function on(obj) {
+    var args = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+      args[_i - 1] = arguments[_i];
+    }
+    if (obj && obj.addEventListener) {
+      obj.addEventListener.apply(obj, args);
+    }
+  }
+  function off(obj) {
+    var args = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+      args[_i - 1] = arguments[_i];
+    }
+    if (obj && obj.removeEventListener) {
+      obj.removeEventListener.apply(obj, args);
+    }
+  }
+  var isBrowser = typeof window !== "undefined";
 
   // node_modules/react-use/esm/useInterval.js
   var import_react = __toModule(require_react());
@@ -21603,13 +21624,43 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   };
   var useInterval_default = useInterval;
 
-  // src/useCelularAutomata.jsx
+  // node_modules/react-use/esm/useSearchParam.js
   var import_react2 = __toModule(require_react());
+  var getValue = function(search, param) {
+    return new URLSearchParams(search).get(param);
+  };
+  var useSearchParam = function(param) {
+    var location = window.location;
+    var _a = (0, import_react2.useState)(function() {
+      return getValue(location.search, param);
+    }), value = _a[0], setValue = _a[1];
+    (0, import_react2.useEffect)(function() {
+      var onChange = function() {
+        setValue(getValue(location.search, param));
+      };
+      on(window, "popstate", onChange);
+      on(window, "pushstate", onChange);
+      on(window, "replacestate", onChange);
+      return function() {
+        off(window, "popstate", onChange);
+        off(window, "pushstate", onChange);
+        off(window, "replacestate", onChange);
+      };
+    }, []);
+    return value;
+  };
+  var useSearchParamServer = function() {
+    return null;
+  };
+  var useSearchParam_default = isBrowser ? useSearchParam : useSearchParamServer;
+
+  // src/useCelularAutomata.jsx
+  var import_react3 = __toModule(require_react());
   var import_cellular_automata = __toModule(require_cellular_automata2());
   var useCelularAutomata = ({ size: size2 = [10, 10, 10] }) => {
-    const [_, setState] = (0, import_react2.useState)(null);
-    const [iterations, setIterations] = (0, import_react2.useState)(0);
-    const ca = (0, import_react2.useMemo)(() => {
+    const [_, setState] = (0, import_react3.useState)(null);
+    const [iterations, setIterations] = (0, import_react3.useState)(0);
+    const ca = (0, import_react3.useMemo)(() => {
       const ca2 = new import_cellular_automata.default(size2);
       ca2.setOutOfBoundValue(0);
       ca2.fillWithDistribution([[0, 95], [1, 5]]);
@@ -21633,10 +21684,10 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   };
 
   // src/Cubes2.jsx
-  var import_react4 = __toModule(require_react());
+  var import_react5 = __toModule(require_react());
 
   // src/Cube.jsx
-  var import_react3 = __toModule(require_react());
+  var import_react4 = __toModule(require_react());
 
   // src/utils.js
   var map3D = (size2, func) => range(size2[0]).map((x) => range(size2[1]).map((y) => range(size2[2]).map((z) => func(x, y, z))));
@@ -21646,23 +21697,23 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   // src/Cube.jsx
   var Cube = ({ pos, disabled }) => {
     const [x, y, z] = pos;
-    return /* @__PURE__ */ import_react3.default.createElement("div", {
+    return /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "cube " + (disabled ? "disabled" : ""),
       "data-layer": "0",
       style: {
         transform: `translate3d(${screenPX(x)}px, ${screenPX(y)}px, ${screenPX(z)}px)`
       }
-    }, /* @__PURE__ */ import_react3.default.createElement("div", {
+    }, /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "face face-1"
-    }), /* @__PURE__ */ import_react3.default.createElement("div", {
+    }), /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "face face-2"
-    }), /* @__PURE__ */ import_react3.default.createElement("div", {
+    }), /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "face face-3"
-    }), /* @__PURE__ */ import_react3.default.createElement("div", {
+    }), /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "face face-4"
-    }), /* @__PURE__ */ import_react3.default.createElement("div", {
+    }), /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "face face-5"
-    }), /* @__PURE__ */ import_react3.default.createElement("div", {
+    }), /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "face face-6"
     }));
   };
@@ -21670,7 +21721,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   // src/Cubes2.jsx
   var Cubes = ({ reachedIteration, cell, size: size2, timeToNext }) => {
     const disabled = !reachedIteration || flashWhenCloseToNext(timeToNext);
-    return /* @__PURE__ */ import_react4.default.createElement(import_react4.default.Fragment, null, " ", map3D(size2, (x, y, z) => cell(x, y, z) ? /* @__PURE__ */ import_react4.default.createElement(Cube, {
+    return /* @__PURE__ */ import_react5.default.createElement(import_react5.default.Fragment, null, " ", map3D(size2, (x, y, z) => cell(x, y, z) ? /* @__PURE__ */ import_react5.default.createElement(Cube, {
       disabled,
       key: `${x}_${y}_${z}`,
       pos: [x, y, z - 5]
@@ -21685,40 +21736,41 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   var changeEvery = 30;
   var size = [10, 10, 10];
   var App = () => {
-    const [reachedIteration, setReachedIteration] = (0, import_react5.useState)(false);
-    const [timeToNext, setTimeToNext] = (0, import_react5.useState)(Infinity);
-    const [desiredIteration, setDesiredIteration] = (0, import_react5.useState)(0);
+    const [reachedIteration, setReachedIteration] = (0, import_react6.useState)(false);
+    const [timeToNext, setTimeToNext] = (0, import_react6.useState)(Infinity);
+    const [desiredIteration, setDesiredIteration] = (0, import_react6.useState)(0);
     const { cell, iterate, iteration } = useCelularAutomata({ size });
+    const enableWarmup = useSearchParam_default("nowarmup") === null;
     useInterval_default(() => {
       const timeDifference = (new Date().getTime() - startTime) / 1e3;
       const desiredIteration2 = Math.floor(timeDifference / changeEvery);
       setDesiredIteration((_) => desiredIteration2);
       setTimeToNext(changeEvery - timeDifference % changeEvery);
-      if (iteration() < desiredIteration2) {
+      if (iteration() < desiredIteration2 && enableWarmup) {
         const stepSize = Math.ceil((desiredIteration2 - iteration()) / 5);
         iterate(stepSize);
       } else {
         setReachedIteration((_) => true);
       }
     }, 500);
-    return /* @__PURE__ */ import_react5.default.createElement(import_react5.default.Fragment, null, /* @__PURE__ */ import_react5.default.createElement("div", {
+    return /* @__PURE__ */ import_react6.default.createElement(import_react6.default.Fragment, null, /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "legend"
-    }, "Rule #23/3"), /* @__PURE__ */ import_react5.default.createElement("div", {
+    }, "Rule #23/3"), /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "right legend"
-    }, "Time to next iteration: ", Math.round(timeToNext * 10) / 10, " "), /* @__PURE__ */ import_react5.default.createElement("div", {
+    }, "Time to next iteration: ", Math.round(timeToNext * 10) / 10, " "), /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "legend"
-    }, "Iteration ", iteration(), " / ", desiredIteration, " "), /* @__PURE__ */ import_react5.default.createElement("div", {
+    }, "Iteration ", iteration(), " / ", desiredIteration, " "), /* @__PURE__ */ import_react6.default.createElement("div", {
       id: "plane-wrapper"
-    }, /* @__PURE__ */ import_react5.default.createElement("div", {
+    }, /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "spacer"
-    }), /* @__PURE__ */ import_react5.default.createElement("div", {
+    }), /* @__PURE__ */ import_react6.default.createElement("div", {
       id: "plane"
-    }, /* @__PURE__ */ import_react5.default.createElement(Cubes, {
+    }, /* @__PURE__ */ import_react6.default.createElement(Cubes, {
       ...{ cell, reachedIteration, size, timeToNext }
     }))));
   };
   var container = document.getElementById("react_root");
-  import_react_dom.default.render(/* @__PURE__ */ import_react5.default.createElement(App, null), container);
+  import_react_dom.default.render(/* @__PURE__ */ import_react6.default.createElement(App, null), container);
 })();
 /*
 object-assign

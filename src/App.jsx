@@ -4,6 +4,7 @@ import ReactDOM from "react-dom";
 import { useInterval } from "react-use";
 import { useCelularAutomata } from "./useCelularAutomata";
 import { Cubes } from "./Cubes2";
+import {useSearchParam} from 'react-use';
 
 const startTime = 1623359462896;
 const changeEvery = 30; // in seconds
@@ -17,13 +18,16 @@ const App = () => {
 
     const {cell, iterate, iteration} = useCelularAutomata({size});
 
+    const enableWarmup = useSearchParam("nowarmup")  === null;
+    
+
     useInterval(() => {
         const timeDifference = (new Date().getTime() - startTime) / 1000;
         const desiredIteration = Math.floor(timeDifference / changeEvery);
         setDesiredIteration(_ => desiredIteration);
         setTimeToNext(changeEvery - timeDifference % changeEvery);
         // console.log(desiredIteration);
-        if (iteration() < desiredIteration) {
+        if (iteration() < desiredIteration && enableWarmup) {
             const stepSize = Math.ceil((desiredIteration - iteration())/5);
             iterate(stepSize);
         } else {
