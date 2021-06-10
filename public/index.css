@@ -152,6 +152,11 @@ body {
   transform-style: preserve-3d;
 }
 
+.disabled .face {
+  background-color: transparent;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
 .face {
   position: absolute;
   width: 50px;
