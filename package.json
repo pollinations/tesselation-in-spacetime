@@ -1,0 +1,29 @@
+{
+  "name": "cellular_nft",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "esbuild --bundle src/cubes.jsx --outfile=public/cubes.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/voodoohop/cellular-nft.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/voodoohop/cellular-nft/issues"
+  },
+  "homepage": "https://github.com/voodoohop/cellular-nft#readme",
+  "dependencies": {
+    "cellular-automata": "^2.0.1",
+    "cellular-automata-patterns": "^1.0.24",
+    "esbuild": "^0.12.8",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-use": "^17.2.4"
+  }
+}

@@ -129,4 +129,5 @@ var spaceIndex = 0
 while (spaceIndex < totalSpaces) {
   addSpace(spaceIndex)
   spaceIndex ++
+  console.log(spaceIndex)
 }
