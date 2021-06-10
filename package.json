@@ -22,9 +22,11 @@
   "dependencies": {
     "cellular-automata": "^2.0.1",
     "cellular-automata-patterns": "^1.0.24",
-    "esbuild": "^0.12.8",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-use": "^17.2.4"
+  },
+  "devDependencies": {
+    "esbuild": "^0.12.8"
   }
 }
