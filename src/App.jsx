@@ -16,7 +16,9 @@ const App = () => {
     const [timeToNext, setTimeToNext] = useState("---");
     const [desiredIteration, setDesiredIteration] = useState(0);
 
-    const {cell, iterate, iteration} = useCelularAutomata({size});
+    const [rule, setRule] = useState("23/3");
+
+    const {cell, iterate, iteration} = useCelularAutomata({size, rule});
 
     const enableWarmup = useSearchParam("nowarmup")  === null;
     
@@ -39,7 +41,7 @@ const App = () => {
 
     return (
     <>
-        <div className="legend"><span className="label">Rule&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> #23/3</div>
+        <div className="legend"><span className="label">Rule&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> {rule}</div>
         <div className="legend"><span className="label">Iteration</span> {iteration()}</div>
         <div className="right legend"> <span className="label">Next(sec)</span> {timeToNext}</div>
 

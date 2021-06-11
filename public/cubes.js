@@ -21657,14 +21657,14 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   // src/useCelularAutomata.jsx
   var import_react3 = __toModule(require_react());
   var import_cellular_automata = __toModule(require_cellular_automata2());
-  var useCelularAutomata = ({ size: size2 = [10, 10, 10] }) => {
+  var useCelularAutomata = ({ size: size2 = [10, 10, 10], rule = "23/3" }) => {
     const [_, setState] = (0, import_react3.useState)(null);
     const [iterations, setIterations] = (0, import_react3.useState)(0);
     const ca = (0, import_react3.useMemo)(() => {
       const ca2 = new import_cellular_automata.default(size2);
       ca2.setOutOfBoundValue(0);
       ca2.fillWithDistribution([[0, 95], [1, 5]]);
-      ca2.setRule("23/3");
+      ca2.setRule(rule);
       return ca2;
     }, [size2]);
     return {
@@ -21739,7 +21739,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     const [reachedIteration, setReachedIteration] = (0, import_react6.useState)(false);
     const [timeToNext, setTimeToNext] = (0, import_react6.useState)("---");
     const [desiredIteration, setDesiredIteration] = (0, import_react6.useState)(0);
-    const { cell, iterate, iteration } = useCelularAutomata({ size });
+    const [rule, setRule] = (0, import_react6.useState)("23/3");
+    const { cell, iterate, iteration } = useCelularAutomata({ size, rule });
     const enableWarmup = useSearchParam_default("nowarmup") === null;
     useInterval_default(() => {
       const timeDifference = (new Date().getTime() - startTime) / 1e3;
@@ -21757,7 +21758,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       className: "legend"
     }, /* @__PURE__ */ import_react6.default.createElement("span", {
       className: "label"
-    }, "Rule\xA0\xA0\xA0\xA0\xA0"), " #23/3"), /* @__PURE__ */ import_react6.default.createElement("div", {
+    }, "Rule\xA0\xA0\xA0\xA0\xA0"), " ", rule), /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "legend"
     }, /* @__PURE__ */ import_react6.default.createElement("span", {
       className: "label"
