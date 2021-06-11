@@ -19,6 +19,11 @@ body {
 .legend {
   padding: 4px 4px;
 }
+
+.label {
+  opacity: 0.4;
+}
+
 /** SHARED **/
 .spacer {
   height: 100%;
@@ -31,94 +36,18 @@ body {
   visibility: hidden;
 }
 
-/** TOOLBAR **/
-#toolbar {
-  position: fixed;
-  left: 20px;
-  top: 20px;
-  z-index: 99;
-}
-
-#toolbar h3 {
-  font-size: 9px;
-  letter-spacing: 0.08em;
-  margin-bottom: 15px;
-}
-
-#toolbar h5 {
-  font-size: 8px;
-  letter-spacing: 0.08em;
-  margin-bottom: 5px;
-}
-
-#colorize {
-  width: 20px;
-  height: 20px;
-  background-image: url('./colors.svg');
-  background-size: cover;
-  cursor: pointer;
-  /* opacity: 0.6; */
-  display: inline-block;
-}
-
-#colorize:hover {
-  opacity: 1;
-}
-
-#color-preview {
-  margin: 0 10px;
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  background-color: #351549;
-}
-
-#perspective {
-  width: 150px;
-  margin-bottom: 20px;
-  position: relative;
-  cursor: ew-resize;
-}
-
-#perspective .slider {
-  height: 5px;
-  width: 100%;
-
-}
-
-#perspective .knob {
-  border-radius: 100%;
-  height: 10px;
-  width: 10px;
-  background-color: #ccc;
-  position: absolute;
-  top: -2.5px;
-}
-
-.github {
-  position: fixed;
-  top: 5px;
-  right: 5px;
-  width: 20px;
-  cursor: pointer;
-  z-index: 99;
-}
-
-.github:hover path {
-  fill: #00aeef;
-}
-
-
 /** PLANE **/
 #plane-wrapper {
   position: fixed;
   min-width: 100%;
   height: 100vh;
   perspective-origin: 50% 50%;
-  perspective: 700px;
+  perspective: 2000px;
   cursor: move;
   text-align: center;
-  overflow: hidden;
+  overflow: visible;
+  transform: scale(0.5);
+  transform-origin: 50% 50%;
 }
 
 #plane {

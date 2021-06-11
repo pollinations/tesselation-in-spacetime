@@ -13,7 +13,7 @@ const size = [10,10,10];
 
 const App = () => {
     const [reachedIteration, setReachedIteration] = useState(false);
-    const [timeToNext, setTimeToNext] = useState(Infinity);
+    const [timeToNext, setTimeToNext] = useState("---");
     const [desiredIteration, setDesiredIteration] = useState(0);
 
     const {cell, iterate, iteration} = useCelularAutomata({size});
@@ -25,12 +25,13 @@ const App = () => {
         const timeDifference = (new Date().getTime() - startTime) / 1000;
         const desiredIteration = Math.floor(timeDifference / changeEvery);
         setDesiredIteration(_ => desiredIteration);
-        setTimeToNext(changeEvery - timeDifference % changeEvery);
+        
         // console.log(desiredIteration);
         if (iteration() < desiredIteration && enableWarmup) {
-            const stepSize = Math.ceil((desiredIteration - iteration())/5);
+            const stepSize = Math.ceil((desiredIteration - iteration())/5)+1;
             iterate(stepSize);
         } else {
+            setTimeToNext(Math.round((changeEvery - timeDifference % changeEvery)*10)/10);
             setReachedIteration(_ => true);
         }
     }, 500)
@@ -38,9 +39,10 @@ const App = () => {
 
     return (
     <>
-        <div className="legend">Rule #23/3</div>
-        <div className="right legend">Time to next iteration: {Math.round(timeToNext*10)/10} </div>
-        <div className="legend">Iteration {iteration()} / {desiredIteration} </div>
+        <div className="legend"><span className="label">Rule&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> #23/3</div>
+        <div className="legend"><span className="label">Iteration</span> {iteration()}</div>
+        <div className="right legend"> <span className="label">Next(sec)</span> {timeToNext}</div>
+
             <div id="plane-wrapper">
             <div className="spacer"></div>
             <div id="plane">

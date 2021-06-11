@@ -21724,11 +21724,11 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     return /* @__PURE__ */ import_react5.default.createElement(import_react5.default.Fragment, null, " ", map3D(size2, (x, y, z) => cell(x, y, z) ? /* @__PURE__ */ import_react5.default.createElement(Cube, {
       disabled,
       key: `${x}_${y}_${z}`,
-      pos: [x, y, z - 5]
+      pos: [x, y, z - 2.5]
     }) : null));
   };
   function flashWhenCloseToNext(timeToNext) {
-    return timeToNext < 1.5;
+    return timeToNext < 0.5;
   }
 
   // src/App.jsx
@@ -21737,7 +21737,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   var size = [10, 10, 10];
   var App = () => {
     const [reachedIteration, setReachedIteration] = (0, import_react6.useState)(false);
-    const [timeToNext, setTimeToNext] = (0, import_react6.useState)(Infinity);
+    const [timeToNext, setTimeToNext] = (0, import_react6.useState)("---");
     const [desiredIteration, setDesiredIteration] = (0, import_react6.useState)(0);
     const { cell, iterate, iteration } = useCelularAutomata({ size });
     const enableWarmup = useSearchParam_default("nowarmup") === null;
@@ -21745,21 +21745,27 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       const timeDifference = (new Date().getTime() - startTime) / 1e3;
       const desiredIteration2 = Math.floor(timeDifference / changeEvery);
       setDesiredIteration((_) => desiredIteration2);
-      setTimeToNext(changeEvery - timeDifference % changeEvery);
       if (iteration() < desiredIteration2 && enableWarmup) {
-        const stepSize = Math.ceil((desiredIteration2 - iteration()) / 5);
+        const stepSize = Math.ceil((desiredIteration2 - iteration()) / 5) + 1;
         iterate(stepSize);
       } else {
+        setTimeToNext(Math.round((changeEvery - timeDifference % changeEvery) * 10) / 10);
         setReachedIteration((_) => true);
       }
     }, 500);
     return /* @__PURE__ */ import_react6.default.createElement(import_react6.default.Fragment, null, /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "legend"
-    }, "Rule #23/3"), /* @__PURE__ */ import_react6.default.createElement("div", {
-      className: "right legend"
-    }, "Time to next iteration: ", Math.round(timeToNext * 10) / 10, " "), /* @__PURE__ */ import_react6.default.createElement("div", {
+    }, /* @__PURE__ */ import_react6.default.createElement("span", {
+      className: "label"
+    }, "Rule\xA0\xA0\xA0\xA0\xA0"), " #23/3"), /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "legend"
-    }, "Iteration ", iteration(), " / ", desiredIteration, " "), /* @__PURE__ */ import_react6.default.createElement("div", {
+    }, /* @__PURE__ */ import_react6.default.createElement("span", {
+      className: "label"
+    }, "Iteration"), " ", iteration()), /* @__PURE__ */ import_react6.default.createElement("div", {
+      className: "right legend"
+    }, " ", /* @__PURE__ */ import_react6.default.createElement("span", {
+      className: "label"
+    }, "Next(sec)"), " ", timeToNext), /* @__PURE__ */ import_react6.default.createElement("div", {
       id: "plane-wrapper"
     }, /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "spacer"
