@@ -21692,7 +21692,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   // src/utils.js
   var map3D = (size2, func) => range(size2[0]).map((x) => range(size2[1]).map((y) => range(size2[2]).map((z) => func(x, y, z))));
   var range = (n) => [...Array(n).keys()];
-  var screenPX = (i) => i * 50;
+  var screenPX = (i) => i * 25;
 
   // src/Cube.jsx
   var Cube = ({ pos, disabled }) => {
