@@ -21746,13 +21746,13 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       const desiredIteration2 = Math.floor(timeDifference / changeEvery);
       setDesiredIteration((_) => desiredIteration2);
       if (iteration() < desiredIteration2 && enableWarmup) {
-        const stepSize = Math.ceil((desiredIteration2 - iteration()) / 5) + 1;
+        const stepSize = Math.ceil((desiredIteration2 - iteration()) / 3) + 1;
         iterate(stepSize);
       } else {
         setTimeToNext(Math.round((changeEvery - timeDifference % changeEvery) * 10) / 10);
         setReachedIteration((_) => true);
       }
-    }, 500);
+    }, 1e3);
     return /* @__PURE__ */ import_react6.default.createElement(import_react6.default.Fragment, null, /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "legend"
     }, /* @__PURE__ */ import_react6.default.createElement("span", {

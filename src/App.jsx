@@ -28,13 +28,13 @@ const App = () => {
         
         // console.log(desiredIteration);
         if (iteration() < desiredIteration && enableWarmup) {
-            const stepSize = Math.ceil((desiredIteration - iteration())/5)+1;
+            const stepSize = Math.ceil((desiredIteration - iteration())/3)+1;
             iterate(stepSize);
         } else {
             setTimeToNext(Math.round((changeEvery - timeDifference % changeEvery)*10)/10);
             setReachedIteration(_ => true);
         }
-    }, 500)
+    }, 1000)
 
 
     return (
