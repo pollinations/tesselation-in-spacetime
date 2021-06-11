@@ -31,7 +31,7 @@ const App = () => {
             const stepSize = Math.ceil((desiredIteration - iteration())/3)+1;
             iterate(stepSize);
         } else {
-            setTimeToNext(Math.round((changeEvery - timeDifference % changeEvery)*10)/10);
+            setTimeToNext(Math.floor((changeEvery - timeDifference % changeEvery)));
             setReachedIteration(_ => true);
         }
     }, 1000)

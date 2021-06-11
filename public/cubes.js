@@ -21749,7 +21749,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         const stepSize = Math.ceil((desiredIteration2 - iteration()) / 3) + 1;
         iterate(stepSize);
       } else {
-        setTimeToNext(Math.round((changeEvery - timeDifference % changeEvery) * 10) / 10);
+        setTimeToNext(Math.floor(changeEvery - timeDifference % changeEvery));
         setReachedIteration((_) => true);
       }
     }, 1e3);
