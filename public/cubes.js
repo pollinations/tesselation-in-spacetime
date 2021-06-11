@@ -21747,7 +21747,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       const desiredIteration2 = Math.floor(timeDifference / changeEvery);
       setDesiredIteration((_) => desiredIteration2);
       if (iteration() < desiredIteration2 && enableWarmup) {
-        const stepSize = Math.ceil((desiredIteration2 - iteration()) / 3) + 1;
+        const stepSize = Math.ceil((desiredIteration2 - iteration()) / 3);
         iterate(stepSize);
       } else {
         setTimeToNext(Math.floor(changeEvery - timeDifference % changeEvery));

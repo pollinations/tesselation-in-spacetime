@@ -30,7 +30,7 @@ const App = () => {
         
         // console.log(desiredIteration);
         if (iteration() < desiredIteration && enableWarmup) {
-            const stepSize = Math.ceil((desiredIteration - iteration())/3)+1;
+            const stepSize = Math.ceil((desiredIteration - iteration())/3);
             iterate(stepSize);
         } else {
             setTimeToNext(Math.floor((changeEvery - timeDifference % changeEvery)));
