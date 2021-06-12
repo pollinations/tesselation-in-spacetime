@@ -21739,7 +21739,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     const [reachedIteration, setReachedIteration] = (0, import_react6.useState)(false);
     const [timeToNext, setTimeToNext] = (0, import_react6.useState)("---");
     const [desiredIteration, setDesiredIteration] = (0, import_react6.useState)(0);
-    const [rule, setRule] = (0, import_react6.useState)("23/3");
+    const [rule, setRule] = (0, import_react6.useState)("1234562/23456715161718");
     const { cell, iterate, iteration } = useCelularAutomata({ size, rule });
     const enableWarmup = useSearchParam_default("nowarmup") === null;
     useInterval_default(() => {

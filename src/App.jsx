@@ -16,7 +16,7 @@ const App = () => {
     const [timeToNext, setTimeToNext] = useState("---");
     const [desiredIteration, setDesiredIteration] = useState(0);
 
-    const [rule, setRule] = useState("23/3");
+    const [rule, setRule] = useState("1234562/23456715161718");
 
     const {cell, iterate, iteration} = useCelularAutomata({size, rule});
 
