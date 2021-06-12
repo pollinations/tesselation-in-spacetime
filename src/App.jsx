@@ -7,7 +7,7 @@ import { Cubes } from "./Cubes2";
 import {useSearchParam} from 'react-use';
 
 const startTime = 1623359462896;
-const changeEvery = 9000; // in seconds
+const changeEvery = 30; // in seconds
 
 const size = [7,7,7];
 

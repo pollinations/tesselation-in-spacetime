@@ -21733,7 +21733,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
 
   // src/App.jsx
   var startTime = 1623359462896;
-  var changeEvery = 9e3;
+  var changeEvery = 30;
   var size = [7, 7, 7];
   var App = () => {
     const [reachedIteration, setReachedIteration] = (0, import_react6.useState)(false);
