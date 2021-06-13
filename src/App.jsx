@@ -7,7 +7,7 @@ import { Cubes } from "./Cubes2";
 import {useSearchParam} from 'react-use';
 
 const startTime = 1623509204841;
-const changeEvery = 30; // in seconds
+const changeEvery = 3000; // in seconds
 
 const size = [7,7,7];
 
@@ -16,7 +16,7 @@ const App = () => {
     const [timeToNext, setTimeToNext] = useState("---");
     const [desiredIteration, setDesiredIteration] = useState(0);
 
-    const [rule, setRule] = useState("12342/2345671718");
+    const [rule, setRule] = useState("34353738/49");
 
     const {cell, iterate, iteration} = useCelularAutomata({size, rule});
 

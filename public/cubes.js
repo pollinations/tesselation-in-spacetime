@@ -21732,14 +21732,14 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   }
 
   // src/App.jsx
-  var startTime = 1623359462896;
-  var changeEvery = 30;
+  var startTime = 1623509204841;
+  var changeEvery = 3e3;
   var size = [7, 7, 7];
   var App = () => {
     const [reachedIteration, setReachedIteration] = (0, import_react6.useState)(false);
     const [timeToNext, setTimeToNext] = (0, import_react6.useState)("---");
     const [desiredIteration, setDesiredIteration] = (0, import_react6.useState)(0);
-    const [rule, setRule] = (0, import_react6.useState)("12342/2345671718");
+    const [rule, setRule] = (0, import_react6.useState)("34353738/49");
     const { cell, iterate, iteration } = useCelularAutomata({ size, rule });
     const enableWarmup = useSearchParam_default("nowarmup") === null;
     useInterval_default(() => {
