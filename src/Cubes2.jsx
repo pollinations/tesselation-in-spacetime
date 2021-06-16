@@ -6,7 +6,7 @@ export const Cubes = ({ reachedIteration, cell, size,timeToNext }) => {
 
     const disabled = !reachedIteration || flashWhenCloseToNext(timeToNext);
 
-    return (<> {map3D(size, (x, y, z) => cell(x, y, z) ? <Cube disabled={disabled} key={`${x}_${y}_${z}`} pos={[x, y, z - 2.5]} /> : null)}
+    return (<> {map3D(size, (x, y, z) => cell(x, y, z) ? <Cube disabled={disabled} key={`${x}_${y}_${z}`} pos={[x, y, z-2.5]} /> : null)}
     </>);
 };
 function flashWhenCloseToNext(timeToNext) {

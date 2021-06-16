@@ -6,7 +6,7 @@ import { useCelularAutomata } from "./useCelularAutomata";
 import { Cubes } from "./Cubes2";
 import {useSearchParam} from 'react-use';
 
-const startTime = 1623509204841;
+const startTime = 1623859266065;
 const changeEvery = 30; // in seconds
 
 const size = [7,7,7];
