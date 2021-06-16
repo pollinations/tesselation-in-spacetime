@@ -45,11 +45,11 @@
             return false;
           }
           var test2 = {};
-          for (var i = 0; i < 10; i++) {
-            test2["_" + String.fromCharCode(i)] = i;
+          for (var i2 = 0; i2 < 10; i2++) {
+            test2["_" + String.fromCharCode(i2)] = i2;
           }
-          var order2 = Object.getOwnPropertyNames(test2).map(function(n) {
-            return test2[n];
+          var order2 = Object.getOwnPropertyNames(test2).map(function(n2) {
+            return test2[n2];
           });
           if (order2.join("") !== "0123456789") {
             return false;
@@ -70,8 +70,8 @@
         var from;
         var to = toObject(target);
         var symbols;
-        for (var s = 1; s < arguments.length; s++) {
-          from = Object(arguments[s]);
+        for (var s2 = 1; s2 < arguments.length; s2++) {
+          from = Object(arguments[s2]);
           for (var key in from) {
             if (hasOwnProperty.call(from, key)) {
               to[key] = from[key];
@@ -79,9 +79,9 @@
           }
           if (getOwnPropertySymbols) {
             symbols = getOwnPropertySymbols(from);
-            for (var i = 0; i < symbols.length; i++) {
-              if (propIsEnumerable.call(from, symbols[i])) {
-                to[symbols[i]] = from[symbols[i]];
+            for (var i2 = 0; i2 < symbols.length; i2++) {
+              if (propIsEnumerable.call(from, symbols[i2])) {
+                to[symbols[i2]] = from[symbols[i2]];
               }
             }
           }
@@ -528,8 +528,8 @@
               props.children = children;
             } else if (childrenLength > 1) {
               var childArray = Array(childrenLength);
-              for (var i = 0; i < childrenLength; i++) {
-                childArray[i] = arguments[i + 2];
+              for (var i2 = 0; i2 < childrenLength; i2++) {
+                childArray[i2] = arguments[i2 + 2];
               }
               {
                 if (Object.freeze) {
@@ -603,8 +603,8 @@
               props.children = children;
             } else if (childrenLength > 1) {
               var childArray = Array(childrenLength);
-              for (var i = 0; i < childrenLength; i++) {
-                childArray[i] = arguments[i + 2];
+              for (var i2 = 0; i2 < childrenLength; i2++) {
+                childArray[i2] = arguments[i2 + 2];
               }
               props.children = childArray;
             }
@@ -684,9 +684,9 @@
             var subtreeCount = 0;
             var nextNamePrefix = nameSoFar === "" ? SEPARATOR : nameSoFar + SUBSEPARATOR;
             if (Array.isArray(children)) {
-              for (var i = 0; i < children.length; i++) {
-                child = children[i];
-                nextName = nextNamePrefix + getElementKey(child, i);
+              for (var i2 = 0; i2 < children.length; i2++) {
+                child = children[i2];
+                nextName = nextNamePrefix + getElementKey(child, i2);
                 subtreeCount += mapIntoArray(child, array, escapedPrefix, nextName, callback);
               }
             } else {
@@ -732,11 +732,11 @@
             return result;
           }
           function countChildren(children) {
-            var n = 0;
+            var n2 = 0;
             mapChildren(children, function() {
-              n++;
+              n2++;
             });
-            return n;
+            return n2;
           }
           function forEachChildren(children, forEachFunc, forEachContext) {
             mapChildren(children, function() {
@@ -1238,19 +1238,19 @@
               if (sample && control && typeof sample.stack === "string") {
                 var sampleLines = sample.stack.split("\n");
                 var controlLines = control.stack.split("\n");
-                var s = sampleLines.length - 1;
+                var s2 = sampleLines.length - 1;
                 var c = controlLines.length - 1;
-                while (s >= 1 && c >= 0 && sampleLines[s] !== controlLines[c]) {
+                while (s2 >= 1 && c >= 0 && sampleLines[s2] !== controlLines[c]) {
                   c--;
                 }
-                for (; s >= 1 && c >= 0; s--, c--) {
-                  if (sampleLines[s] !== controlLines[c]) {
-                    if (s !== 1 || c !== 1) {
+                for (; s2 >= 1 && c >= 0; s2--, c--) {
+                  if (sampleLines[s2] !== controlLines[c]) {
+                    if (s2 !== 1 || c !== 1) {
                       do {
-                        s--;
+                        s2--;
                         c--;
-                        if (c < 0 || sampleLines[s] !== controlLines[c]) {
-                          var _frame = "\n" + sampleLines[s].replace(" at new ", " at ");
+                        if (c < 0 || sampleLines[s2] !== controlLines[c]) {
+                          var _frame = "\n" + sampleLines[s2].replace(" at new ", " at ");
                           {
                             if (typeof fn === "function") {
                               componentFrameCache.set(fn, _frame);
@@ -1258,7 +1258,7 @@
                           }
                           return _frame;
                         }
-                      } while (s >= 1 && c >= 0);
+                      } while (s2 >= 1 && c >= 0);
                     }
                     break;
                   }
@@ -1447,8 +1447,8 @@
               return;
             }
             if (Array.isArray(node)) {
-              for (var i = 0; i < node.length; i++) {
-                var child = node[i];
+              for (var i2 = 0; i2 < node.length; i2++) {
+                var child = node[i2];
                 if (isValidElement(child)) {
                   validateExplicitKey(child, parentType);
                 }
@@ -1502,8 +1502,8 @@
           function validateFragmentProps(fragment) {
             {
               var keys = Object.keys(fragment.props);
-              for (var i = 0; i < keys.length; i++) {
-                var key = keys[i];
+              for (var i2 = 0; i2 < keys.length; i2++) {
+                var key = keys[i2];
                 if (key !== "children" && key !== "key") {
                   setCurrentlyValidatingElement$1(fragment);
                   error("Invalid prop `%s` supplied to `React.Fragment`. React.Fragment can only have `key` and `children` props.", key);
@@ -1551,8 +1551,8 @@
               return element;
             }
             if (validType) {
-              for (var i = 2; i < arguments.length; i++) {
-                validateChildKeys(arguments[i], type);
+              for (var i2 = 2; i2 < arguments.length; i2++) {
+                validateChildKeys(arguments[i2], type);
               }
             }
             if (type === exports.Fragment) {
@@ -1586,8 +1586,8 @@
           }
           function cloneElementWithValidation(element, props, children) {
             var newElement = cloneElement.apply(this, arguments);
-            for (var i = 2; i < arguments.length; i++) {
-              validateChildKeys(arguments[i], newElement.type);
+            for (var i2 = 2; i2 < arguments.length; i2++) {
+              validateChildKeys(arguments[i2], newElement.type);
             }
             validatePropTypes(newElement);
             return newElement;
@@ -1597,7 +1597,7 @@
               var frozenObject = Object.freeze({});
               new Map([[frozenObject, null]]);
               new Set([frozenObject]);
-            } catch (e) {
+            } catch (e2) {
             }
           }
           var createElement$1 = createElementWithValidation;
@@ -1687,9 +1687,9 @@
                   var hasRemainingTime = true;
                   _callback(hasRemainingTime, currentTime);
                   _callback = null;
-                } catch (e) {
+                } catch (e2) {
                   setTimeout(_flushCallback, 0);
-                  throw e;
+                  throw e2;
                 }
               }
             };
@@ -1811,8 +1811,8 @@
               return null;
             }
           }
-          function siftUp(heap, node, i) {
-            var index = i;
+          function siftUp(heap, node, i2) {
+            var index = i2;
             while (true) {
               var parentIndex = index - 1 >>> 1;
               var parent = heap[parentIndex];
@@ -1825,8 +1825,8 @@
               }
             }
           }
-          function siftDown(heap, node, i) {
-            var index = i;
+          function siftDown(heap, node, i2) {
+            var index = i2;
             var length = heap.length;
             while (index < length) {
               var leftIndex = (index + 1) * 2 - 1;
@@ -2531,8 +2531,8 @@
                 possibleRegistrationNames.ondblclick = registrationName;
               }
             }
-            for (var i = 0; i < dependencies.length; i++) {
-              allNativeEvents.add(dependencies[i]);
+            for (var i2 = 0; i2 < dependencies.length; i2++) {
+              allNativeEvents.add(dependencies[i2]);
             }
           }
           var canUseDOM = !!(typeof window !== "undefined" && typeof window.document !== "undefined" && typeof window.document.createElement !== "undefined");
@@ -3160,19 +3160,19 @@
               if (sample && control && typeof sample.stack === "string") {
                 var sampleLines = sample.stack.split("\n");
                 var controlLines = control.stack.split("\n");
-                var s = sampleLines.length - 1;
+                var s2 = sampleLines.length - 1;
                 var c = controlLines.length - 1;
-                while (s >= 1 && c >= 0 && sampleLines[s] !== controlLines[c]) {
+                while (s2 >= 1 && c >= 0 && sampleLines[s2] !== controlLines[c]) {
                   c--;
                 }
-                for (; s >= 1 && c >= 0; s--, c--) {
-                  if (sampleLines[s] !== controlLines[c]) {
-                    if (s !== 1 || c !== 1) {
+                for (; s2 >= 1 && c >= 0; s2--, c--) {
+                  if (sampleLines[s2] !== controlLines[c]) {
+                    if (s2 !== 1 || c !== 1) {
                       do {
-                        s--;
+                        s2--;
                         c--;
-                        if (c < 0 || sampleLines[s] !== controlLines[c]) {
-                          var _frame = "\n" + sampleLines[s].replace(" at new ", " at ");
+                        if (c < 0 || sampleLines[s2] !== controlLines[c]) {
+                          var _frame = "\n" + sampleLines[s2].replace(" at new ", " at ");
                           {
                             if (typeof fn === "function") {
                               componentFrameCache.set(fn, _frame);
@@ -3180,7 +3180,7 @@
                           }
                           return _frame;
                         }
-                      } while (s >= 1 && c >= 0);
+                      } while (s2 >= 1 && c >= 0);
                     }
                     break;
                   }
@@ -3527,7 +3527,7 @@
             }
             try {
               return doc.activeElement || doc.body;
-            } catch (e) {
+            } catch (e2) {
               return doc.body;
             }
           }
@@ -3663,8 +3663,8 @@
                 queryRoot = queryRoot.parentNode;
               }
               var group = queryRoot.querySelectorAll("input[name=" + JSON.stringify("" + name) + '][type="radio"]');
-              for (var i = 0; i < group.length; i++) {
-                var otherNode = group[i];
+              for (var i2 = 0; i2 < group.length; i2++) {
+                var otherNode = group[i2];
                 if (otherNode === rootNode || otherNode.form !== rootNode.form) {
                   continue;
                 }
@@ -3755,8 +3755,8 @@
           function checkSelectPropTypes(props) {
             {
               checkControlledValueProps("select", props);
-              for (var i = 0; i < valuePropNames.length; i++) {
-                var propName = valuePropNames[i];
+              for (var i2 = 0; i2 < valuePropNames.length; i2++) {
+                var propName = valuePropNames[i2];
                 if (props[propName] == null) {
                   continue;
                 }
@@ -3774,8 +3774,8 @@
             if (multiple) {
               var selectedValues = propValue;
               var selectedValue = {};
-              for (var i = 0; i < selectedValues.length; i++) {
-                selectedValue["$" + selectedValues[i]] = true;
+              for (var i2 = 0; i2 < selectedValues.length; i2++) {
+                selectedValue["$" + selectedValues[i2]] = true;
               }
               for (var _i = 0; _i < options2.length; _i++) {
                 var selected = selectedValue.hasOwnProperty("$" + options2[_i].value);
@@ -4144,7 +4144,7 @@
             var warnedForNaNValue = false;
             var warnedForInfinityValue = false;
             var camelize = function(string) {
-              return string.replace(hyphenPattern, function(_, character) {
+              return string.replace(hyphenPattern, function(_2, character) {
                 return character.toUpperCase();
               });
             };
@@ -4250,8 +4250,8 @@
             var expanded = {};
             for (var key in styles) {
               var longhands = shorthandToLonghand[key] || [key];
-              for (var i = 0; i < longhands.length; i++) {
-                expanded[longhands[i]] = key;
+              for (var i2 = 0; i2 < longhands.length; i2++) {
+                expanded[longhands[i2]] = key;
               }
             }
             return expanded;
@@ -5152,8 +5152,8 @@
             restoreQueue = null;
             restoreStateOfTarget(target);
             if (queuedTargets) {
-              for (var i = 0; i < queuedTargets.length; i++) {
-                restoreStateOfTarget(queuedTargets[i]);
+              for (var i2 = 0; i2 < queuedTargets.length; i2++) {
+                restoreStateOfTarget(queuedTargets[i2]);
               }
             }
           }
@@ -5276,11 +5276,11 @@
               });
               window.addEventListener("test", options, options);
               window.removeEventListener("test", options, options);
-            } catch (e) {
+            } catch (e2) {
               passiveBrowserEventsSupported = false;
             }
           }
-          function invokeGuardedCallbackProd(name, func, context, a, b, c, d, e, f) {
+          function invokeGuardedCallbackProd(name, func, context, a, b, c, d, e2, f) {
             var funcArgs = Array.prototype.slice.call(arguments, 3);
             try {
               func.apply(context, funcArgs);
@@ -5292,7 +5292,7 @@
           {
             if (typeof window !== "undefined" && typeof window.dispatchEvent === "function" && typeof document !== "undefined" && typeof document.createEvent === "function") {
               var fakeNode = document.createElement("react");
-              invokeGuardedCallbackImpl = function invokeGuardedCallbackDev(name, func, context, a, b, c, d, e, f) {
+              invokeGuardedCallbackImpl = function invokeGuardedCallbackDev(name, func, context, a, b, c, d, e2, f) {
                 if (!(typeof document !== "undefined")) {
                   {
                     throw Error("The `document` global was defined when React was initialized, but is not defined anymore. This can happen in a test environment if a component schedules an update from an asynchronous callback, but the test has already finished running. To solve this, you can either unmount the component at the end of your test (and ensure that any asynchronous operations get canceled in `componentWillUnmount`), or you can change the test itself to be asynchronous.");
@@ -5369,12 +5369,12 @@
               caughtError = error2;
             }
           };
-          function invokeGuardedCallback(name, func, context, a, b, c, d, e, f) {
+          function invokeGuardedCallback(name, func, context, a, b, c, d, e2, f) {
             hasError = false;
             caughtError = null;
             invokeGuardedCallbackImpl$1.apply(reporter, arguments);
           }
-          function invokeGuardedCallbackAndCatchFirstError(name, func, context, a, b, c, d, e, f) {
+          function invokeGuardedCallbackAndCatchFirstError(name, func, context, a, b, c, d, e2, f) {
             invokeGuardedCallback.apply(this, arguments);
             if (hasError) {
               var error2 = clearCaughtError();
@@ -5937,8 +5937,8 @@
           function retryIfBlockedOn(unblocked) {
             if (queuedDiscreteEvents.length > 0) {
               scheduleCallbackIfUnblocked(queuedDiscreteEvents[0], unblocked);
-              for (var i = 1; i < queuedDiscreteEvents.length; i++) {
-                var queuedEvent = queuedDiscreteEvents[i];
+              for (var i2 = 1; i2 < queuedDiscreteEvents.length; i2++) {
+                var queuedEvent = queuedDiscreteEvents[i2];
                 if (queuedEvent.blockedOn === unblocked) {
                   queuedEvent.blockedOn = null;
                 }
@@ -6099,9 +6099,9 @@
           var userBlockingPairsForSimpleEventPlugin = ["drag", "drag", "dragenter", "dragEnter", "dragexit", "dragExit", "dragleave", "dragLeave", "dragover", "dragOver", "mousemove", "mouseMove", "mouseout", "mouseOut", "mouseover", "mouseOver", "pointermove", "pointerMove", "pointerout", "pointerOut", "pointerover", "pointerOver", "scroll", "scroll", "toggle", "toggle", "touchmove", "touchMove", "wheel", "wheel"];
           var continuousPairsForSimpleEventPlugin = ["abort", "abort", ANIMATION_END, "animationEnd", ANIMATION_ITERATION, "animationIteration", ANIMATION_START, "animationStart", "canplay", "canPlay", "canplaythrough", "canPlayThrough", "durationchange", "durationChange", "emptied", "emptied", "encrypted", "encrypted", "ended", "ended", "error", "error", "gotpointercapture", "gotPointerCapture", "load", "load", "loadeddata", "loadedData", "loadedmetadata", "loadedMetadata", "loadstart", "loadStart", "lostpointercapture", "lostPointerCapture", "playing", "playing", "progress", "progress", "seeking", "seeking", "stalled", "stalled", "suspend", "suspend", "timeupdate", "timeUpdate", TRANSITION_END, "transitionEnd", "waiting", "waiting"];
           function registerSimplePluginEventsAndSetTheirPriorities(eventTypes, priority) {
-            for (var i = 0; i < eventTypes.length; i += 2) {
-              var topEvent = eventTypes[i];
-              var event = eventTypes[i + 1];
+            for (var i2 = 0; i2 < eventTypes.length; i2 += 2) {
+              var topEvent = eventTypes[i2];
+              var event = eventTypes[i2 + 1];
               var capitalizedEvent = event[0].toUpperCase() + event.slice(1);
               var reactName = "on" + capitalizedEvent;
               eventPriorities.set(topEvent, priority);
@@ -6110,8 +6110,8 @@
             }
           }
           function setEventPriorities(eventTypes, priority) {
-            for (var i = 0; i < eventTypes.length; i++) {
-              eventPriorities.set(eventTypes[i], priority);
+            for (var i2 = 0; i2 < eventTypes.length; i2++) {
+              eventPriorities.set(eventTypes[i2], priority);
             }
           }
           function getEventPriorityForPluginSystem(domEventName) {
@@ -6535,7 +6535,7 @@
           }
           function createLaneMap(initial) {
             var laneMap = [];
-            for (var i = 0; i < TotalLanes; i++) {
+            for (var i2 = 0; i2 < TotalLanes; i2++) {
               laneMap.push(initial);
             }
             return laneMap;
@@ -7545,8 +7545,8 @@
             if (keysA.length !== keysB.length) {
               return false;
             }
-            for (var i = 0; i < keysA.length; i++) {
-              if (!hasOwnProperty$2.call(objB, keysA[i]) || !objectIs(objA[keysA[i]], objB[keysA[i]])) {
+            for (var i2 = 0; i2 < keysA.length; i2++) {
+              if (!hasOwnProperty$2.call(objB, keysA[i2]) || !objectIs(objA[keysA[i2]], objB[keysA[i2]])) {
                 return false;
               }
             }
@@ -7595,7 +7595,7 @@
             try {
               anchorNode.nodeType;
               focusNode.nodeType;
-            } catch (e) {
+            } catch (e2) {
               return null;
             }
             return getModernOffsetsFromPoints(outerNode, anchorNode, anchorOffset, focusNode, focusOffset);
@@ -7762,8 +7762,8 @@
               if (typeof priorFocusedElem.focus === "function") {
                 priorFocusedElem.focus();
               }
-              for (var i = 0; i < ancestors.length; i++) {
-                var info = ancestors[i];
+              for (var i2 = 0; i2 < ancestors.length; i2++) {
+                var info = ancestors[i2];
                 info.element.scrollLeft = info.left;
                 info.element.scrollTop = info.top;
               }
@@ -8004,8 +8004,8 @@
           function processDispatchQueueItemsInOrder(event, dispatchListeners, inCapturePhase) {
             var previousInstance;
             if (inCapturePhase) {
-              for (var i = dispatchListeners.length - 1; i >= 0; i--) {
-                var _dispatchListeners$i = dispatchListeners[i], instance = _dispatchListeners$i.instance, currentTarget = _dispatchListeners$i.currentTarget, listener = _dispatchListeners$i.listener;
+              for (var i2 = dispatchListeners.length - 1; i2 >= 0; i2--) {
+                var _dispatchListeners$i = dispatchListeners[i2], instance = _dispatchListeners$i.instance, currentTarget = _dispatchListeners$i.currentTarget, listener = _dispatchListeners$i.listener;
                 if (instance !== previousInstance && event.isPropagationStopped()) {
                   return;
                 }
@@ -8025,8 +8025,8 @@
           }
           function processDispatchQueue(dispatchQueue, eventSystemFlags) {
             var inCapturePhase = (eventSystemFlags & IS_CAPTURE_PHASE) !== 0;
-            for (var i = 0; i < dispatchQueue.length; i++) {
-              var _dispatchQueue$i = dispatchQueue[i], event = _dispatchQueue$i.event, listeners = _dispatchQueue$i.listeners;
+            for (var i2 = 0; i2 < dispatchQueue.length; i2++) {
+              var _dispatchQueue$i = dispatchQueue[i2], event = _dispatchQueue$i.event, listeners = _dispatchQueue$i.listeners;
               processDispatchQueueItemsInOrder(event, listeners, inCapturePhase);
             }
             rethrowCaughtError();
@@ -8443,9 +8443,9 @@
             }
           }
           function updateDOMProperties(domElement, updatePayload, wasCustomComponentTag, isCustomComponentTag) {
-            for (var i = 0; i < updatePayload.length; i += 2) {
-              var propKey = updatePayload[i];
-              var propValue = updatePayload[i + 1];
+            for (var i2 = 0; i2 < updatePayload.length; i2 += 2) {
+              var propKey = updatePayload[i2];
+              var propValue = updatePayload[i2 + 1];
               if (propKey === STYLE) {
                 setValueForStyles(domElement, propValue);
               } else if (propKey === DANGEROUSLY_SET_INNER_HTML) {
@@ -8528,8 +8528,8 @@
                 break;
               case "video":
               case "audio":
-                for (var i = 0; i < mediaEventTypes.length; i++) {
-                  listenToNonDelegatedEvent(mediaEventTypes[i], domElement);
+                for (var i2 = 0; i2 < mediaEventTypes.length; i2++) {
+                  listenToNonDelegatedEvent(mediaEventTypes[i2], domElement);
                 }
                 props = rawProps;
                 break;
@@ -8788,8 +8788,8 @@
                 break;
               case "video":
               case "audio":
-                for (var i = 0; i < mediaEventTypes.length; i++) {
-                  listenToNonDelegatedEvent(mediaEventTypes[i], domElement);
+                for (var i2 = 0; i2 < mediaEventTypes.length; i2++) {
+                  listenToNonDelegatedEvent(mediaEventTypes[i2], domElement);
                 }
                 break;
               case "source":
@@ -10141,14 +10141,14 @@
           function flushSyncCallbackQueueImpl() {
             if (!isFlushingSyncQueue && syncQueue !== null) {
               isFlushingSyncQueue = true;
-              var i = 0;
+              var i2 = 0;
               {
                 try {
                   var _isSync2 = true;
                   var _queue = syncQueue;
                   runWithPriority$1(ImmediatePriority$1, function() {
-                    for (; i < _queue.length; i++) {
-                      var callback = _queue[i];
+                    for (; i2 < _queue.length; i2++) {
+                      var callback = _queue[i2];
                       do {
                         callback = callback(_isSync2);
                       } while (callback !== null);
@@ -10157,7 +10157,7 @@
                   syncQueue = null;
                 } catch (error2) {
                   if (syncQueue !== null) {
-                    syncQueue = syncQueue.slice(i + 1);
+                    syncQueue = syncQueue.slice(i2 + 1);
                   }
                   Scheduler_scheduleCallback(Scheduler_ImmediatePriority, flushSyncCallbackQueue);
                   throw error2;
@@ -10884,8 +10884,8 @@
             var effects = finishedQueue.effects;
             finishedQueue.effects = null;
             if (effects !== null) {
-              for (var i = 0; i < effects.length; i++) {
-                var effect = effects[i];
+              for (var i2 = 0; i2 < effects.length; i2++) {
+                var effect = effects[i2];
                 var callback = effect.callback;
                 if (callback !== null) {
                   effect.callback = null;
@@ -11822,8 +11822,8 @@
             function reconcileChildrenArray(returnFiber, currentFirstChild, newChildren, lanes) {
               {
                 var knownKeys = null;
-                for (var i = 0; i < newChildren.length; i++) {
-                  var child = newChildren[i];
+                for (var i2 = 0; i2 < newChildren.length; i2++) {
+                  var child = newChildren[i2];
                   knownKeys = warnOnInvalidKey(child, knownKeys, returnFiber);
                 }
               }
@@ -12552,8 +12552,8 @@
             workInProgressSources.push(mutableSource);
           }
           function resetWorkInProgressVersions() {
-            for (var i = 0; i < workInProgressSources.length; i++) {
-              var mutableSource = workInProgressSources[i];
+            for (var i2 = 0; i2 < workInProgressSources.length; i2++) {
+              var mutableSource = workInProgressSources[i2];
               {
                 mutableSource._workInProgressVersionPrimary = null;
               }
@@ -12636,10 +12636,10 @@
                 if (hookTypesDev !== null) {
                   var table = "";
                   var secondColumnStart = 30;
-                  for (var i = 0; i <= hookTypesUpdateIndexDev; i++) {
-                    var oldHookName = hookTypesDev[i];
-                    var newHookName = i === hookTypesUpdateIndexDev ? currentHookName : oldHookName;
-                    var row = i + 1 + ". " + oldHookName;
+                  for (var i2 = 0; i2 <= hookTypesUpdateIndexDev; i2++) {
+                    var oldHookName = hookTypesDev[i2];
+                    var newHookName = i2 === hookTypesUpdateIndexDev ? currentHookName : oldHookName;
+                    var row = i2 + 1 + ". " + oldHookName;
                     while (row.length < secondColumnStart) {
                       row += " ";
                     }
@@ -12675,8 +12675,8 @@
                 error("The final argument passed to %s changed size between renders. The order and size of this array must remain constant.\n\nPrevious: %s\nIncoming: %s", currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + nextDeps.join(", ") + "]");
               }
             }
-            for (var i = 0; i < prevDeps.length && i < nextDeps.length; i++) {
-              if (objectIs(nextDeps[i], prevDeps[i])) {
+            for (var i2 = 0; i2 < prevDeps.length && i2 < nextDeps.length; i2++) {
+              if (objectIs(nextDeps[i2], prevDeps[i2])) {
                 continue;
               }
               return false;
@@ -14669,9 +14669,9 @@
               {
                 var mutableSourceEagerHydrationData = root2.mutableSourceEagerHydrationData;
                 if (mutableSourceEagerHydrationData != null) {
-                  for (var i = 0; i < mutableSourceEagerHydrationData.length; i += 2) {
-                    var mutableSource = mutableSourceEagerHydrationData[i];
-                    var version = mutableSourceEagerHydrationData[i + 1];
+                  for (var i2 = 0; i2 < mutableSourceEagerHydrationData.length; i2 += 2) {
+                    var mutableSource = mutableSourceEagerHydrationData[i2];
+                    var version = mutableSourceEagerHydrationData[i2 + 1];
                     setWorkInProgressVersion(mutableSource, version);
                   }
                 }
@@ -15245,8 +15245,8 @@
             {
               if ((revealOrder === "forwards" || revealOrder === "backwards") && children !== void 0 && children !== null && children !== false) {
                 if (Array.isArray(children)) {
-                  for (var i = 0; i < children.length; i++) {
-                    if (!validateSuspenseListNestedChild(children[i], i)) {
+                  for (var i2 = 0; i2 < children.length; i2++) {
+                    if (!validateSuspenseListNestedChild(children[i2], i2)) {
                       return;
                     }
                   }
@@ -16240,9 +16240,9 @@
               } else {
                 console["error"](error2);
               }
-            } catch (e) {
+            } catch (e2) {
               setTimeout(function() {
-                throw e;
+                throw e2;
               });
             }
           }
@@ -18219,8 +18219,8 @@
                 if (spawnedWorkDuringRender !== null) {
                   var expirationTimes = spawnedWorkDuringRender;
                   spawnedWorkDuringRender = null;
-                  for (var i = 0; i < expirationTimes.length; i++) {
-                    scheduleInteractions(root2, expirationTimes[i], root2.memoizedInteractions);
+                  for (var i2 = 0; i2 < expirationTimes.length; i2++) {
+                    scheduleInteractions(root2, expirationTimes[i2], root2.memoizedInteractions);
                   }
                 }
                 schedulePendingInteractions(root2, remainingLanes);
@@ -18422,9 +18422,9 @@
             var prevInteractions = pushInteractions(root2);
             var unmountEffects = pendingPassiveHookEffectsUnmount;
             pendingPassiveHookEffectsUnmount = [];
-            for (var i = 0; i < unmountEffects.length; i += 2) {
-              var _effect = unmountEffects[i];
-              var fiber = unmountEffects[i + 1];
+            for (var i2 = 0; i2 < unmountEffects.length; i2 += 2) {
+              var _effect = unmountEffects[i2];
+              var fiber = unmountEffects[i2 + 1];
               var destroy = _effect.destroy;
               _effect.destroy = void 0;
               {
@@ -19215,7 +19215,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               var nonExtensibleObject = Object.preventExtensions({});
               new Map([[nonExtensibleObject, null]]);
               new Set([nonExtensibleObject]);
-            } catch (e) {
+            } catch (e2) {
               hasBadMapPolyfill = true;
             }
           }
@@ -19938,8 +19938,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 warn("copyWithRename() expects paths of the same length");
                 return;
               } else {
-                for (var i = 0; i < newPath.length - 1; i++) {
-                  if (oldPath[i] !== newPath[i]) {
+                for (var i2 = 0; i2 < newPath.length - 1; i2++) {
+                  if (oldPath[i2] !== newPath[i2]) {
                     warn("copyWithRename() expects paths to be the same except for the deepest key");
                     return;
                   }
@@ -20112,8 +20112,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               listenToAllSupportedEvents(rootContainerElement);
             }
             if (mutableSources) {
-              for (var i = 0; i < mutableSources.length; i++) {
-                var mutableSource = mutableSources[i];
+              for (var i2 = 0; i2 < mutableSources.length; i2++) {
+                var mutableSource = mutableSources[i2];
                 registerMutableSourceForHydration(root2, mutableSource);
               }
             }
@@ -20437,8 +20437,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       utils.splitCommaSeparatedNumbersWithRanges = function(string) {
         const splitString = string.split(",");
         const result = [];
-        for (let i = 0; i < splitString.length; i++) {
-          const expression = splitString[i];
+        for (let i2 = 0; i2 < splitString.length; i2++) {
+          const expression = splitString[i2];
           const rangeMatch = regexRange.exec(expression);
           if (rangeMatch) {
             utils.appendRangeToArray(parseInt(rangeMatch[1], 10), parseInt(rangeMatch[2], 10), result);
@@ -20463,8 +20463,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       utils.splitCommaSeparatedNumbersWithRangesAndProbability = function(string) {
         const splitString = string.split(",");
         const result = {};
-        for (let i = 0; i < splitString.length; i++) {
-          const expression = splitString[i];
+        for (let i2 = 0; i2 < splitString.length; i2++) {
+          const expression = splitString[i2];
           const rangeMatch = regexRange.exec(expression);
           const probabilityMatch = regexProbability.exec(expression);
           const probability = Math.max(0, Math.min(1, probabilityMatch ? parseFloat(probabilityMatch[2]) : 1));
@@ -20941,9 +20941,9 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         var size2 = range2 * 2 + 1;
         var length = Math.pow(size2, dimensions) - 1;
         var neighbors = new Array(length);
-        for (var i = 0; i < length; i++) {
-          var neighbor = neighbors[i] = new Array(dimensions);
-          var index = i < length / 2 ? i : i + 1;
+        for (var i2 = 0; i2 < length; i2++) {
+          var neighbor = neighbors[i2] = new Array(dimensions);
+          var index = i2 < length / 2 ? i2 : i2 + 1;
           for (var dimension = 1; dimension <= dimensions; dimension++) {
             var value = index % Math.pow(size2, dimension);
             neighbor[dimension - 1] = value / Math.pow(size2, dimension - 1) - range2;
@@ -20963,9 +20963,9 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         range2 = range2 || 1;
         dimensions = dimensions || 2;
         var size2 = range2 * 2 + 1, iterations = Math.pow(size2, dimensions), center = (iterations - 1) / 2, neighbors = [];
-        for (var i = 0; i < iterations; i++) {
-          if (i !== center) {
-            var neighbor = new Array(dimensions), distance = 0, remaining = i;
+        for (var i2 = 0; i2 < iterations; i2++) {
+          if (i2 !== center) {
+            var neighbor = new Array(dimensions), distance = 0, remaining = i2;
             for (var d = 0; d < dimensions; d++) {
               var remainder = remaining % Math.pow(size2, d + 1), value = remainder / Math.pow(size2, d) - range2;
               neighbor[d] = value;
@@ -20991,20 +20991,20 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         range2 = range2 || 1;
         return recurse([], [], 0);
         function recurse(array, temp, d) {
-          var i, k, match;
+          var i2, k, match;
           if (d === dims - 1) {
-            for (i = -range2; i <= range2; i += 1) {
-              match = i === 0 ? 1 : 0;
+            for (i2 = -range2; i2 <= range2; i2 += 1) {
+              match = i2 === 0 ? 1 : 0;
               for (k = 0; k < dims; k++) {
                 match += temp[k] === 0 ? 1 : 0;
               }
               if (match === dims - 1) {
-                array.push(temp.concat(i));
+                array.push(temp.concat(i2));
               }
             }
           } else {
-            for (i = -range2; i <= range2; i += 1) {
-              recurse(array, temp.concat(i), d + 1);
+            for (i2 = -range2; i2 <= range2; i2 += 1) {
+              recurse(array, temp.concat(i2), d + 1);
             }
           }
           return array;
@@ -21022,20 +21022,20 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         range2 = range2 || 1;
         return recurse([], [], 0);
         function recurse(array, temp, d) {
-          var i, k, match;
+          var i2, k, match;
           if (d === dims - 1) {
-            for (i = -range2; i <= range2; i += 1) {
-              match = Math.abs(i) === range2 ? 1 : 0;
+            for (i2 = -range2; i2 <= range2; i2 += 1) {
+              match = Math.abs(i2) === range2 ? 1 : 0;
               for (k = 0; k < dims; k++) {
                 match += Math.abs(temp[k]) === range2 ? 1 : 0;
               }
               if (match === dims) {
-                array.push(temp.concat(i));
+                array.push(temp.concat(i2));
               }
             }
           } else {
-            for (i = -range2; i <= range2; i += 1) {
-              recurse(array, temp.concat(i), d + 1);
+            for (i2 = -range2; i2 <= range2; i2 += 1) {
+              recurse(array, temp.concat(i2), d + 1);
             }
           }
           return array;
@@ -21053,20 +21053,20 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         range2 = range2 || 1;
         return recurse([], [], 0);
         function recurse(array, temp, d) {
-          var i, k, match;
+          var i2, k, match;
           if (d === dims - 1) {
-            for (i = -range2; i <= range2; i += 1) {
-              match = Math.abs(i) === range2 ? 1 : 0;
+            for (i2 = -range2; i2 <= range2; i2 += 1) {
+              match = Math.abs(i2) === range2 ? 1 : 0;
               for (k = 0; k < dims; k++) {
                 match += Math.abs(temp[k]) === range2 ? 1 : 0;
               }
               if (match >= dims - 1) {
-                array.push(temp.concat(i));
+                array.push(temp.concat(i2));
               }
             }
           } else {
-            for (i = -range2; i <= range2; i += 1) {
-              recurse(array, temp.concat(i), d + 1);
+            for (i2 = -range2; i2 <= range2; i2 += 1) {
+              recurse(array, temp.concat(i2), d + 1);
             }
           }
           return array;
@@ -21084,20 +21084,20 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         range2 = range2 || 1;
         return recurse([], [], 0);
         function recurse(array, temp, d) {
-          var i, k, match;
+          var i2, k, match;
           if (d === dims - 1) {
-            for (i = -range2; i <= range2; i += 1) {
-              match = Math.abs(i) === range2;
+            for (i2 = -range2; i2 <= range2; i2 += 1) {
+              match = Math.abs(i2) === range2;
               for (k = 0; !match && k < dims; k++) {
                 match = Math.abs(temp[k]) === range2;
               }
               if (match) {
-                array.push(temp.concat(i));
+                array.push(temp.concat(i2));
               }
             }
           } else {
-            for (i = -range2; i <= range2; i += 1) {
-              recurse(array, temp.concat(i), d + 1);
+            for (i2 = -range2; i2 <= range2; i2 += 1) {
+              recurse(array, temp.concat(i2), d + 1);
             }
           }
           return array;
@@ -21140,10 +21140,10 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   var require_iota = __commonJS({
     "node_modules/iota-array/iota.js"(exports, module) {
       "use strict";
-      function iota(n) {
-        var result = new Array(n);
-        for (var i = 0; i < n; ++i) {
-          result[i] = i;
+      function iota(n2) {
+        var result = new Array(n2);
+        for (var i2 = 0; i2 < n2; ++i2) {
+          result[i2] = i2;
         }
         return result;
       }
@@ -21178,14 +21178,14 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       function order() {
         var stride = this.stride;
         var terms = new Array(stride.length);
-        var i;
-        for (i = 0; i < terms.length; ++i) {
-          terms[i] = [Math.abs(stride[i]), i];
+        var i2;
+        for (i2 = 0; i2 < terms.length; ++i2) {
+          terms[i2] = [Math.abs(stride[i2]), i2];
         }
         terms.sort(compare1st);
         var result = new Array(terms.length);
-        for (i = 0; i < result.length; ++i) {
-          result[i] = terms[i][1];
+        for (i2 = 0; i2 < result.length; ++i2) {
+          result[i2] = terms[i2][1];
         }
         return result;
       }
@@ -21206,21 +21206,21 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         }
         var code = ["'use strict'"];
         var indices = iota(dimension);
-        var args = indices.map(function(i2) {
-          return "i" + i2;
+        var args = indices.map(function(i3) {
+          return "i" + i3;
         });
-        var index_str = "this.offset+" + indices.map(function(i2) {
-          return "this.stride[" + i2 + "]*i" + i2;
+        var index_str = "this.offset+" + indices.map(function(i3) {
+          return "this.stride[" + i3 + "]*i" + i3;
         }).join("+");
-        var shapeArg = indices.map(function(i2) {
-          return "b" + i2;
+        var shapeArg = indices.map(function(i3) {
+          return "b" + i3;
         }).join(",");
-        var strideArg = indices.map(function(i2) {
-          return "c" + i2;
+        var strideArg = indices.map(function(i3) {
+          return "c" + i3;
         }).join(",");
         code.push("function " + className + "(a," + shapeArg + "," + strideArg + ",d){this.data=a", "this.shape=[" + shapeArg + "]", "this.stride=[" + strideArg + "]", "this.offset=d|0}", "var proto=" + className + ".prototype", "proto.dtype='" + dtype + "'", "proto.dimension=" + dimension);
-        code.push("Object.defineProperty(proto,'size',{get:function " + className + "_size(){return " + indices.map(function(i2) {
-          return "this.shape[" + i2 + "]";
+        code.push("Object.defineProperty(proto,'size',{get:function " + className + "_size(){return " + indices.map(function(i3) {
+          return "this.shape[" + i3 + "]";
         }).join("*"), "}})");
         if (dimension === 1) {
           code.push("proto.order=[0]");
@@ -21250,57 +21250,57 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           code.push("return this.data[" + index_str + "]}");
         }
         code.push("proto.index=function " + className + "_index(", args.join(), "){return " + index_str + "}");
-        code.push("proto.hi=function " + className + "_hi(" + args.join(",") + "){return new " + className + "(this.data," + indices.map(function(i2) {
-          return ["(typeof i", i2, "!=='number'||i", i2, "<0)?this.shape[", i2, "]:i", i2, "|0"].join("");
-        }).join(",") + "," + indices.map(function(i2) {
-          return "this.stride[" + i2 + "]";
+        code.push("proto.hi=function " + className + "_hi(" + args.join(",") + "){return new " + className + "(this.data," + indices.map(function(i3) {
+          return ["(typeof i", i3, "!=='number'||i", i3, "<0)?this.shape[", i3, "]:i", i3, "|0"].join("");
+        }).join(",") + "," + indices.map(function(i3) {
+          return "this.stride[" + i3 + "]";
         }).join(",") + ",this.offset)}");
-        var a_vars = indices.map(function(i2) {
-          return "a" + i2 + "=this.shape[" + i2 + "]";
+        var a_vars = indices.map(function(i3) {
+          return "a" + i3 + "=this.shape[" + i3 + "]";
         });
-        var c_vars = indices.map(function(i2) {
-          return "c" + i2 + "=this.stride[" + i2 + "]";
+        var c_vars = indices.map(function(i3) {
+          return "c" + i3 + "=this.stride[" + i3 + "]";
         });
         code.push("proto.lo=function " + className + "_lo(" + args.join(",") + "){var b=this.offset,d=0," + a_vars.join(",") + "," + c_vars.join(","));
-        for (var i = 0; i < dimension; ++i) {
-          code.push("if(typeof i" + i + "==='number'&&i" + i + ">=0){d=i" + i + "|0;b+=c" + i + "*d;a" + i + "-=d}");
+        for (var i2 = 0; i2 < dimension; ++i2) {
+          code.push("if(typeof i" + i2 + "==='number'&&i" + i2 + ">=0){d=i" + i2 + "|0;b+=c" + i2 + "*d;a" + i2 + "-=d}");
         }
-        code.push("return new " + className + "(this.data," + indices.map(function(i2) {
-          return "a" + i2;
-        }).join(",") + "," + indices.map(function(i2) {
-          return "c" + i2;
+        code.push("return new " + className + "(this.data," + indices.map(function(i3) {
+          return "a" + i3;
+        }).join(",") + "," + indices.map(function(i3) {
+          return "c" + i3;
         }).join(",") + ",b)}");
-        code.push("proto.step=function " + className + "_step(" + args.join(",") + "){var " + indices.map(function(i2) {
-          return "a" + i2 + "=this.shape[" + i2 + "]";
-        }).join(",") + "," + indices.map(function(i2) {
-          return "b" + i2 + "=this.stride[" + i2 + "]";
+        code.push("proto.step=function " + className + "_step(" + args.join(",") + "){var " + indices.map(function(i3) {
+          return "a" + i3 + "=this.shape[" + i3 + "]";
+        }).join(",") + "," + indices.map(function(i3) {
+          return "b" + i3 + "=this.stride[" + i3 + "]";
         }).join(",") + ",c=this.offset,d=0,ceil=Math.ceil");
-        for (var i = 0; i < dimension; ++i) {
-          code.push("if(typeof i" + i + "==='number'){d=i" + i + "|0;if(d<0){c+=b" + i + "*(a" + i + "-1);a" + i + "=ceil(-a" + i + "/d)}else{a" + i + "=ceil(a" + i + "/d)}b" + i + "*=d}");
+        for (var i2 = 0; i2 < dimension; ++i2) {
+          code.push("if(typeof i" + i2 + "==='number'){d=i" + i2 + "|0;if(d<0){c+=b" + i2 + "*(a" + i2 + "-1);a" + i2 + "=ceil(-a" + i2 + "/d)}else{a" + i2 + "=ceil(a" + i2 + "/d)}b" + i2 + "*=d}");
         }
-        code.push("return new " + className + "(this.data," + indices.map(function(i2) {
-          return "a" + i2;
-        }).join(",") + "," + indices.map(function(i2) {
-          return "b" + i2;
+        code.push("return new " + className + "(this.data," + indices.map(function(i3) {
+          return "a" + i3;
+        }).join(",") + "," + indices.map(function(i3) {
+          return "b" + i3;
         }).join(",") + ",c)}");
         var tShape = new Array(dimension);
         var tStride = new Array(dimension);
-        for (var i = 0; i < dimension; ++i) {
-          tShape[i] = "a[i" + i + "]";
-          tStride[i] = "b[i" + i + "]";
+        for (var i2 = 0; i2 < dimension; ++i2) {
+          tShape[i2] = "a[i" + i2 + "]";
+          tStride[i2] = "b[i" + i2 + "]";
         }
-        code.push("proto.transpose=function " + className + "_transpose(" + args + "){" + args.map(function(n, idx) {
-          return n + "=(" + n + "===undefined?" + idx + ":" + n + "|0)";
+        code.push("proto.transpose=function " + className + "_transpose(" + args + "){" + args.map(function(n2, idx) {
+          return n2 + "=(" + n2 + "===undefined?" + idx + ":" + n2 + "|0)";
         }).join(";"), "var a=this.shape,b=this.stride;return new " + className + "(this.data," + tShape.join(",") + "," + tStride.join(",") + ",this.offset)}");
         code.push("proto.pick=function " + className + "_pick(" + args + "){var a=[],b=[],c=this.offset");
-        for (var i = 0; i < dimension; ++i) {
-          code.push("if(typeof i" + i + "==='number'&&i" + i + ">=0){c=(c+this.stride[" + i + "]*i" + i + ")|0}else{a.push(this.shape[" + i + "]);b.push(this.stride[" + i + "])}");
+        for (var i2 = 0; i2 < dimension; ++i2) {
+          code.push("if(typeof i" + i2 + "==='number'&&i" + i2 + ">=0){c=(c+this.stride[" + i2 + "]*i" + i2 + ")|0}else{a.push(this.shape[" + i2 + "]);b.push(this.stride[" + i2 + "])}");
         }
         code.push("var ctor=CTOR_LIST[a.length+1];return ctor(this.data,a,b,c)}");
-        code.push("return function construct_" + className + "(data,shape,stride,offset){return new " + className + "(data," + indices.map(function(i2) {
-          return "shape[" + i2 + "]";
-        }).join(",") + "," + indices.map(function(i2) {
-          return "stride[" + i2 + "]";
+        code.push("return function construct_" + className + "(data,shape,stride,offset){return new " + className + "(data," + indices.map(function(i3) {
+          return "shape[" + i3 + "]";
+        }).join(",") + "," + indices.map(function(i3) {
+          return "stride[" + i3 + "]";
         }).join(",") + ",offset)}");
         var procedure = new Function("CTOR_LIST", "ORDER", code.join("\n"));
         return procedure(CACHED_CONSTRUCTORS[dtype], order);
@@ -21369,16 +21369,16 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         var d = shape.length;
         if (stride === void 0) {
           stride = new Array(d);
-          for (var i = d - 1, sz = 1; i >= 0; --i) {
-            stride[i] = sz;
-            sz *= shape[i];
+          for (var i2 = d - 1, sz = 1; i2 >= 0; --i2) {
+            stride[i2] = sz;
+            sz *= shape[i2];
           }
         }
         if (offset === void 0) {
           offset = 0;
-          for (var i = 0; i < d; ++i) {
-            if (stride[i] < 0) {
-              offset -= (shape[i] - 1) * stride[i];
+          for (var i2 = 0; i2 < d; ++i2) {
+            if (stride[i2] < 0) {
+              offset -= (shape[i2] - 1) * stride[i2];
             }
           }
         }
@@ -21405,8 +21405,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           return p * v;
         }, 1);
         const dataArray = new Uint8Array(length);
-        for (let i = 0; i < length; i++) {
-          dataArray[i] = defaultValue;
+        for (let i2 = 0; i2 < length; i2++) {
+          dataArray[i2] = defaultValue;
         }
         return ndarray(dataArray, shape);
       };
@@ -21454,15 +21454,15 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         const numberOfDistributions = distribution.length;
         let sum = 0;
         rng = rng || this.rng;
-        for (let i = 0; i < numberOfDistributions; i++) {
-          sum += distribution[i][1];
+        for (let i2 = 0; i2 < numberOfDistributions; i2++) {
+          sum += distribution[i2][1];
         }
         for (let k = 0; k < array.length; k++) {
           let selection = rng() * sum;
-          for (let i = 0; i < numberOfDistributions; i++) {
-            selection -= distribution[i][1];
-            if (selection <= 0 && distribution[i][0] !== null) {
-              array[k] = distribution[i][0];
+          for (let i2 = 0; i2 < numberOfDistributions; i2++) {
+            selection -= distribution[i2][1];
+            if (selection <= 0 && distribution[i2][0] !== null) {
+              array[k] = distribution[i2][0];
               break;
             }
           }
@@ -21657,21 +21657,117 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   // src/useCelularAutomata.jsx
   var import_react3 = __toModule(require_react());
   var import_cellular_automata = __toModule(require_cellular_automata2());
-  var useCelularAutomata = ({ size: size2 = [10, 10, 10], rule = "23/3" }) => {
-    const [_, setState] = (0, import_react3.useState)(null);
+
+  // node_modules/rand-seed/dist/rand-seed.es.js
+  var t = function(r2, n2) {
+    return (t = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(t2, r3) {
+      t2.__proto__ = r3;
+    } || function(t2, r3) {
+      for (var n3 in r3)
+        Object.prototype.hasOwnProperty.call(r3, n3) && (t2[n3] = r3[n3]);
+    })(r2, n2);
+  };
+  function r(r2, n2) {
+    function i2() {
+      this.constructor = r2;
+    }
+    t(r2, n2), r2.prototype = n2 === null ? Object.create(n2) : (i2.prototype = n2.prototype, new i2());
+  }
+  var n;
+  var i = function() {
+    function t2() {
+    }
+    return t2._xfnv1a = function(t3) {
+      for (var r2 = 2166136261, n2 = 0; n2 < t3.length; n2++)
+        r2 = Math.imul(r2 ^ t3.charCodeAt(n2), 16777619);
+      return function() {
+        return r2 += r2 << 13, r2 ^= r2 >>> 7, r2 += r2 << 3, r2 ^= r2 >>> 17, (r2 += r2 << 5) >>> 0;
+      };
+    }, t2;
+  }();
+  var s = function(t2) {
+    function n2(r2) {
+      var i2 = t2.call(this) || this;
+      return i2._a = n2._xfnv1a(r2)(), i2;
+    }
+    return r(n2, t2), n2.prototype.next = function() {
+      var t3 = this._a += 1831565813;
+      return t3 = Math.imul(t3 ^ t3 >>> 15, 1 | t3), (((t3 ^= t3 + Math.imul(t3 ^ t3 >>> 7, 61 | t3)) ^ t3 >>> 14) >>> 0) / 4294967296;
+    }, n2;
+  }(i);
+  var e = function(t2) {
+    function n2(r2) {
+      var i2 = t2.call(this) || this, s2 = n2._xfnv1a(r2);
+      return i2._a = s2(), i2._b = s2(), i2._c = s2(), i2._d = s2(), i2;
+    }
+    return r(n2, t2), n2.prototype.next = function() {
+      this._a >>>= 0, this._b >>>= 0, this._c >>>= 0, this._d >>>= 0;
+      var t3 = this._a + this._b | 0;
+      return this._a = this._b ^ this._b >>> 9, this._b = this._c + (this._c << 3) | 0, this._c = this._c << 21 | this._c >>> 11, this._d = this._d + 1 | 0, t3 = t3 + this._d | 0, this._c = this._c + t3 | 0, (t3 >>> 0) / 4294967296;
+    }, n2;
+  }(i);
+  var o = function(t2) {
+    function n2(r2) {
+      var i2 = t2.call(this) || this, s2 = n2._xfnv1a(r2);
+      return i2._a = s2(), i2._b = s2(), i2._c = s2(), i2._d = s2(), i2;
+    }
+    return r(n2, t2), n2.prototype.next = function() {
+      var t3 = this._b << 9, r2 = 5 * this._a;
+      return r2 = 9 * (r2 << 7 | r2 >>> 25), this._c ^= this._a, this._d ^= this._b, this._b ^= this._c, this._a ^= this._d, this._c ^= t3, this._d = this._d << 11 | this._d >>> 21, (r2 >>> 0) / 4294967296;
+    }, n2;
+  }(i);
+  !function(t2) {
+    t2.sfc32 = "sfc32", t2.mulberry32 = "mulberry32", t2.xoshiro128ss = "xoshiro128ss";
+  }(n || (n = {}));
+  var _ = function() {
+    function t2(t3, r2) {
+      r2 === void 0 && (r2 = n.sfc32), this._str = t3, this._prng = r2, this._generator = this._initializeGenerator();
+    }
+    return t2.prototype.next = function() {
+      return this._generator.next();
+    }, t2.prototype._initializeGenerator = function() {
+      if (function(t4) {
+        return t4 === null;
+      }(t3 = this._str) || function(t4) {
+        return t4 === void 0;
+      }(t3))
+        return this._wrap();
+      var t3;
+      switch (this._prng) {
+        case "sfc32":
+          return new e(this._str);
+        case "mulberry32":
+          return new s(this._str);
+        case "xoshiro128ss":
+          return new o(this._str);
+        default:
+          return this._wrap();
+      }
+    }, t2.prototype._wrap = function() {
+      return { next: function() {
+        return Math.random();
+      } };
+    }, t2;
+  }();
+  var rand_seed_es_default = _;
+
+  // src/useCelularAutomata.jsx
+  var useCelularAutomata = ({ size: size2 = [10, 10, 10], rule = "23/3", seed: seed2 = "1" }) => {
+    const [_2, setState] = (0, import_react3.useState)(null);
     const [iterations, setIterations] = (0, import_react3.useState)(0);
     const ca = (0, import_react3.useMemo)(() => {
+      const rng = new rand_seed_es_default(seed2);
       const ca2 = new import_cellular_automata.default(size2);
       ca2.setOutOfBoundValue(0);
-      ca2.fillWithDistribution([[0, 95], [1, 5]]);
+      ca2.fillWithDistribution([[0, 50], [1, 50]], () => rng.next());
       ca2.setRule(rule);
       return ca2;
     }, [size2]);
     return {
-      iterate(n = 1) {
-        console.log("iterating", n);
-        ca.iterate(n);
-        setIterations((iterations2) => iterations2 + n);
+      iterate(n2 = 1) {
+        console.log("iterating", n2);
+        ca.iterate(n2);
+        setIterations((iterations2) => iterations2 + n2);
         setState(ca);
       },
       cell(...pos) {
@@ -21691,8 +21787,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
 
   // src/utils.js
   var map3D = (size2, func) => range(size2[0]).map((x) => range(size2[1]).map((y) => range(size2[2]).map((z) => func(x, y, z))));
-  var range = (n) => [...Array(n).keys()];
-  var screenPX = (i) => i * 25;
+  var range = (n2) => [...Array(n2).keys()];
+  var screenPX = (i2) => i2 * 25;
 
   // src/Cube.jsx
   var Cube = ({ pos, disabled }) => {
@@ -21733,25 +21829,26 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
 
   // src/App.jsx
   var startTime = 1623859266065;
-  var changeEvery = 30;
+  var changeEvery = 300;
   var size = [7, 7, 7];
+  var seed = "41";
   var App = () => {
     const [reachedIteration, setReachedIteration] = (0, import_react6.useState)(false);
     const [timeToNext, setTimeToNext] = (0, import_react6.useState)("---");
     const [desiredIteration, setDesiredIteration] = (0, import_react6.useState)(0);
     const [rule, setRule] = (0, import_react6.useState)("345/2232");
-    const { cell, iterate, iteration } = useCelularAutomata({ size, rule });
+    const { cell, iterate, iteration } = useCelularAutomata({ size, rule, seed });
     const enableWarmup = useSearchParam_default("nowarmup") === null;
     useInterval_default(() => {
       const timeDifference = (new Date().getTime() - startTime) / 1e3;
       const desiredIteration2 = Math.floor(timeDifference / changeEvery);
-      setDesiredIteration((_) => desiredIteration2);
+      setDesiredIteration((_2) => desiredIteration2);
       if (iteration() < desiredIteration2 && enableWarmup) {
         const stepSize = Math.ceil((desiredIteration2 - iteration()) / 3);
         iterate(stepSize);
       } else {
         setTimeToNext(Math.floor(changeEvery - timeDifference % changeEvery));
-        setReachedIteration((_) => true);
+        setReachedIteration((_2) => true);
       }
     }, 1e3);
     return /* @__PURE__ */ import_react6.default.createElement(import_react6.default.Fragment, null, /* @__PURE__ */ import_react6.default.createElement("div", {
@@ -21790,6 +21887,20 @@ object-assign
  * @author   Feross Aboukhadijeh <https://feross.org>
  * @license  MIT
  */
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+***************************************************************************** */
 /**
  * Checks if an event is supported in the current execution environment.
  *

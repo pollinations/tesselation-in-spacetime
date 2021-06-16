@@ -13,10 +13,17 @@ var $perspectiveKnob = document.querySelector('#perspective .knob')
 
 /** METHODS **/
 function setDragStart(e) {
+  if (e.touches)
+    e = e.touches["0"];
+
   dragStart = { x: e.pageX, y: e.pageY }
 }
 
 function calculateRotations(e) {
+
+  if (e.touches)
+    e = e.touches["0"];
+
   dragEnd = { x: e.pageX, y: e.pageY }
 
   var dragDiffX = dragEnd.x - dragStart.x
@@ -55,7 +62,9 @@ function endDrag() {
 }
 
 function drag(e) {
-  e.preventDefault()
+  if (!e.touches)
+    e.preventDefault()
+  // console.log("drag",e)
   calculateRotations(e)
 
   // when the browser is ready, apply the new positioning

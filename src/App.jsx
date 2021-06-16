@@ -7,9 +7,11 @@ import { Cubes } from "./Cubes2";
 import {useSearchParam} from 'react-use';
 
 const startTime = 1623859266065;
-const changeEvery = 30; // in seconds
+const changeEvery = 300; // in seconds
 
 const size = [7,7,7];
+
+const seed="41";
 
 const App = () => {
     const [reachedIteration, setReachedIteration] = useState(false);
@@ -18,7 +20,9 @@ const App = () => {
 
     const [rule, setRule] = useState("345/2232");
 
-    const {cell, iterate, iteration} = useCelularAutomata({size, rule});
+    
+
+    const {cell, iterate, iteration} = useCelularAutomata({size, rule, seed});
 
     const enableWarmup = useSearchParam("nowarmup")  === null;
     
