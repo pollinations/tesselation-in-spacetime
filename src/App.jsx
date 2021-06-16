@@ -7,18 +7,18 @@ import { Cubes } from "./Cubes2";
 import {useSearchParam} from 'react-use';
 
 const startTime = 1623859266065;
-const changeEvery = 200; // in seconds
+const changeEvery = 30; // in seconds
 
 const size = [7,7,7];
 
-const seed="m";
+const seed="mjhjhjhjhj";
 
 const App = () => {
     const [reachedIteration, setReachedIteration] = useState(false);
     const [timeToNext, setTimeToNext] = useState("---");
     const [desiredIteration, setDesiredIteration] = useState(0);
 
-    const [rule, setRule] = useState("133/33321");
+    const [rule, setRule] = useState("5678/6789");
 
     
 
