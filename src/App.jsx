@@ -12,15 +12,14 @@ const changeEvery = 30; // in seconds
 
 const size = [7,7,7];
 
-const seed="41";
+const seed="mjhjhjhjhjhh";
 
 const App = () => {
     const [reachedIteration, setReachedIteration] = useState(false);
     const [timeToNext, setTimeToNext] = useState("---");
 
-    const [rule, setRule] = useState("345/2232");
+    const [rule, setRule] = useState("5678/6789");
 
-    
 
     const {cell, iterate, iteration, cells} = useCelularAutomata({size, rule, seed});
 
