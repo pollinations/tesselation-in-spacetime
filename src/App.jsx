@@ -44,20 +44,16 @@ const App = () => {
 
     let stl=null;
     if (createSTL) {
-        console.log(cells())
-        stl = "data: text/json;charset=utf-8,"+exportSTL({cells: cells(), width: size[0], binary: false});
+
+        stl = "data: text/json;charset=utf-8,"+exportSTL({cells: cells(), width: size[0], binary: false, iteration});
     }
-    // var obj = {a: 123, b: "4 5 6"};
-    // var data = "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(obj));
-    
-    // $('<a href="data:' + data + '" download="data.json">download JSON</a>').appendTo('#container');
 
     return (
     <>
         <div className="legend"><span className="label">Rule&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> {rule}</div>
         <div className="legend"><span className="label">Iteration</span> {iteration()}</div>
         <div className="right legend"> <span className="label">Next(sec)</span> {timeToNext}</div>
-        {exportSTL && <div className="legend"><a href={stl} download="cellular_nft.stl">download STL</a></div>}
+        {stl && <div className="legend"><a href={stl} download={`cellular_nft_iteration_${iteration()}_rule_${rule.replace("/","_")}.stl`}>Download STL</a></div>}
             <div id="plane-wrapper">
             <div className="spacer"></div>
             <div id="plane">

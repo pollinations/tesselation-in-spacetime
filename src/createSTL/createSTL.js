@@ -141,7 +141,8 @@ const exportSTL = (...params) => {
         margin = 2,
         qrColor = defaultQrColor,
         handle = null,
-        stlOptions = {}
+        stlOptions = {},
+        iteration=0
     } = options
 
     const colors = {
@@ -189,7 +190,7 @@ const exportSTL = (...params) => {
         }
     }
     return stereol.exportStl(facets, {
-            description: 'Cellular NFT - Iteration x ',
+            description: 'Cellular NFT - Iteration '+iteration,
             binary,
             ...stlOptions
         })
