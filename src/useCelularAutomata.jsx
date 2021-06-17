@@ -21,12 +21,16 @@ export const useCelularAutomata = ({ size = [10, 10, 10], rule = '23/3', seed="1
             ca.iterate(n);
             setIterations(iterations => iterations+n);
             setState(ca);
+            // console.log(ca)
         },
         cell(...pos) {
             return ca.array.get(...pos);
         },
         iteration() {
             return iterations;
+        },
+        cells() {
+            return [...ca.array.data];
         }
     };
 
