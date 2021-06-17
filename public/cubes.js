@@ -22183,7 +22183,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       className: "right legend"
     }, " ", /* @__PURE__ */ import_react6.default.createElement("span", {
       className: "label"
-    }, "Next(sec)"), " ", timeToNext), stl && /* @__PURE__ */ import_react6.default.createElement("div", {
+    }, "Next(sec)"), " ", timeToNext), createSTL && /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "legend"
     }, /* @__PURE__ */ import_react6.default.createElement("a", {
       href: stl,

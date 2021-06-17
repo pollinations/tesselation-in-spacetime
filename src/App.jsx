@@ -53,7 +53,7 @@ const App = () => {
         <div className="legend"><span className="label">Rule&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> {rule}</div>
         <div className="legend"><span className="label">Iteration</span> {iteration()}</div>
         <div className="right legend"> <span className="label">Next(sec)</span> {timeToNext}</div>
-        {stl && <div className="legend"><a href={stl} download={`cellular_nft_iteration_${iteration()}_rule_${rule.replace("/","_")}.stl`}>Download STL</a></div>}
+        {createSTL && <div className="legend"><a href={stl} download={`cellular_nft_iteration_${iteration()}_rule_${rule.replace("/","_")}.stl`}>Download STL</a></div>}
             <div id="plane-wrapper">
             <div className="spacer"></div>
             <div id="plane">
