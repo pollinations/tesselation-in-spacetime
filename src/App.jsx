@@ -7,8 +7,8 @@ import { Cubes } from "./Cubes2";
 import {useSearchParam} from 'react-use';
 import exportSTL from "./createSTL/createSTL";
 
-const startTime = 1623859266065;
-const changeEvery = 30; // in seconds
+const startTime = 1624194000000;
+const changeEvery = 180; // in seconds
 
 const size = [7,7,7];
 
@@ -52,7 +52,7 @@ const App = () => {
     <>
         <div className="legend"><span className="label">Rule&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> {rule}</div>
         <div className="legend"><span className="label">Iteration</span> {iteration()}</div>
-        <div className="right legend"> <span className="label">Next(sec)</span> {timeToNext}</div>
+        <div className="right legend"> <span className="label">Next</span> {timeToNext}</div>
         {createSTL && <div className="legend"><a href={stl} download={`cellular_nft_iteration_${iteration()}_rule_${rule.replace("/","_")}.stl`}>Download STL</a></div>}
             <div id="plane-wrapper">
             <div className="spacer"></div>

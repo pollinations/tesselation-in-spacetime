@@ -22144,8 +22144,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   var createSTL_default = exportSTL;
 
   // src/App.jsx
-  var startTime = 1623859266065;
-  var changeEvery = 30;
+  var startTime = 1624194e6;
+  var changeEvery = 180;
   var size = [7, 7, 7];
   var seed = "mjhjhjhjhjhh";
   var App = () => {
@@ -22183,7 +22183,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       className: "right legend"
     }, " ", /* @__PURE__ */ import_react6.default.createElement("span", {
       className: "label"
-    }, "Next(sec)"), " ", timeToNext), createSTL && /* @__PURE__ */ import_react6.default.createElement("div", {
+    }, "Next"), " ", timeToNext), createSTL && /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "legend"
     }, /* @__PURE__ */ import_react6.default.createElement("a", {
       href: stl,
