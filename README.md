@@ -1,5 +1,7 @@
 ## Tessellation in Spacetime [5678/6789]
 
+![Tesselation](https://i.imgur.com/wppBbJK.gif)
+
 https://hicetnunc.xyz/objkt/143202
 
 Tessellation in Spacetime is an ever evolving cellular automaton that was born on the unix epoch 1624204800 and changes its shape every 3 minutes. Everyone is seeing the same shape at the same time, it is a living thing that transcends your browser.  
