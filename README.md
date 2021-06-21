@@ -1,6 +1,6 @@
 ## Tessellation in Spacetime [5678/6789]
 
-![Tesselation](https://i.imgur.com/wppBbJK.gif)
+![Tesselation](https://i.imgur.com/O64GZyE.gif)
 
 https://hicetnunc.xyz/objkt/143202
 
