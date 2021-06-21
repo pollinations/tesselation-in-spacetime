@@ -21,18 +21,27 @@
        url('fonts/basiercirclemono-regular-webfont.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+  }
 }
 
+#container {
+  width: 350px;
+  height: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  /* background-color: rgba(255,255,255,0.1); */
 }
 
 body {
-  background-color: rgb(17, 17, 17);
+  /* background-color: rgb(17, 17, 17); */
   font-family: "basier_circle_monoregular",monospace;
   color: rgb(222,222,222);
+  overflow: hidden;
 }
 
 .legend {
   padding: 4px 4px;
+  font-size: 85%;
 }
 
 .label {
@@ -56,13 +65,12 @@ body {
 #plane-wrapper {
   position: relative;
   min-width: 100%;
-  height: 500px;
+  height: 350px;
   perspective-origin: 50% 50%;
   perspective: 2000px;
   cursor: move;
   text-align: center;
   overflow: visible;
-  /* transform: scale(0.5); */
   transform-origin: 50% 50%;
 }
 
@@ -83,19 +91,18 @@ body {
   transform-style: preserve-3d;
 }
 
-.disabled .face {
-  background-color: black;
-  border: 1px solid rgba(255,255,255,0.3);
-}
-
 .face {
   position: absolute;
   width: 25px;
   height: 25px;
   background-color: #4a22ff;
   transform-origin: 50% 50%;
-  /* border: 0px solid rgba(0,0,0,0.1); */
   z-index: 2;
+}
+
+.disabled .face {
+  background-color: black;
+  border: 1px solid rgba(255,255,255,0.3);
 }
 
 .face-1 {

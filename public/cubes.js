@@ -21823,11 +21823,11 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     return /* @__PURE__ */ import_react5.default.createElement(import_react5.default.Fragment, null, " ", map3D(size2, (x, y, z) => cell(x, y, z) ? /* @__PURE__ */ import_react5.default.createElement(Cube, {
       disabled,
       key: `${x}_${y}_${z}`,
-      pos: [x, y, z - 2.5]
+      pos: [x, y, z - 2]
     }) : null));
   };
   function flashWhenCloseToNext(timeToNext) {
-    return timeToNext < 0.5;
+    return timeToNext < 0.55;
   }
 
   // node_modules/stereol/dist/stereol.m.js
@@ -22144,7 +22144,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   var createSTL_default = exportSTL;
 
   // src/App.jsx
-  var startTime = 1624194e6;
+  var startTime = 16242048e5;
   var changeEvery = 180;
   var size = [7, 7, 7];
   var seed = "mjhjhjhjhjhh";
@@ -22175,15 +22175,11 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       className: "legend"
     }, /* @__PURE__ */ import_react6.default.createElement("span", {
       className: "label"
-    }, "Rule\xA0\xA0\xA0\xA0\xA0"), " ", rule), /* @__PURE__ */ import_react6.default.createElement("div", {
-      className: "legend"
-    }, /* @__PURE__ */ import_react6.default.createElement("span", {
-      className: "label"
     }, "Iteration"), " ", iteration()), /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "right legend"
     }, " ", /* @__PURE__ */ import_react6.default.createElement("span", {
       className: "label"
-    }, "Next"), " ", timeToNext), createSTL && /* @__PURE__ */ import_react6.default.createElement("div", {
+    }, "Next\xA0\xA0\xA0\xA0\xA0"), " ", timeToNext), createSTL && /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "legend"
     }, /* @__PURE__ */ import_react6.default.createElement("a", {
       href: stl,
